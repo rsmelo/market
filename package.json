@@ -96,7 +96,10 @@
     },
     "plugins": [
       "css-modules"
-    ]
+    ],
+    "rules": {
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    }
   },
   "stylelint": {
     "extends": "stylelint-config-pagarme-react"
