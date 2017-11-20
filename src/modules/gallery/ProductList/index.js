@@ -2,13 +2,16 @@ import { connect } from 'react-redux'
 
 import ProductList from './ProductList'
 
-// const mapStateToProps = {}
+import { getProducts } from '../actions'
+import { getGalleryProducts } from '../../combinedReducers'
+
+const mapStateToProps = state => ({
+  products: getGalleryProducts(state),
+})
 
 const mapDispatchToProps = {
-  getProducts: () => {
-    console.log('getProducts')
-  },
+  getProducts,
 }
 
 
-export default connect(null, mapDispatchToProps)(ProductList)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList)
