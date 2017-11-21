@@ -1,4 +1,3 @@
-
 import { put, call } from 'redux-saga/effects'
 
 import { getProducts } from './sagas'
