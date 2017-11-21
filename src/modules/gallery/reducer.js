@@ -49,3 +49,4 @@ export default gallery
 
 export const getProducts = state => state.products
 export const getIsFetching = state => state.isFetching
+export const getProductById = (state, id) => state.products.find(product => id === product.id)

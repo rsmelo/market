@@ -1,4 +1,4 @@
-import reducer, { getIsFetching, getProducts } from './reducer'
+import reducer, { getIsFetching, getProducts, getProductById } from './reducer'
 import * as types from './types'
 
 describe('Gallery reducer', () => {
@@ -95,11 +95,13 @@ describe('Gallery reducer', () => {
         isFetching: true,
       }
     })
+
     describe('getIsFetching', () => {
       it('should return isFetching property', () => {
         expect(getIsFetching(state)).toBe(true)
       })
     })
+
     describe('getProducts', () => {
       it('should return products property', () => {
         const products = [
@@ -112,6 +114,20 @@ describe('Gallery reducer', () => {
           },
         ]
         expect(getProducts(state)).toEqual(products)
+      })
+
+      describe('getProductById', () => {
+        it('should return products property', () => {
+          const id = 'a12091'
+          const product = {
+            id: 'a12091',
+            name: 'a product 2',
+            price: 12,
+            image: 'image-url-2',
+            description: 'test-2',
+          }
+          expect(getProductById(state, id)).toEqual(product)
+        })
       })
     })
   })
