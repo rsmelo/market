@@ -1,0 +1,65 @@
+[
+  {
+    "id": "dd5ca2b6-b8ae-4627-95f3-7d49613a0df5",
+    "name": "Abomination",
+    "price": 80,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg",
+    "description": "Action figure marvel select Abomination"
+  },
+  {
+    "id": "b5e0f729-8a93-4243-9d65-b272582748c5",
+    "name": "Thanos",
+    "price": 80,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/81vNqNswHGL._SL1500_.jpg",
+    "description": "Action figure marvel select Thanos"
+  },
+  {
+    "id": "d55dcac8-379f-400e-bca1-02c622d93e19",
+    "name": "Razer Mamba Chroma",
+    "price": 250,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/41WhKmsLXmL.jpg",
+    "description": "Mouse gamer razer chroma com muitas cores"
+  },
+  {
+    "id": "cf242328-7d3e-41e6-b4e5-611bf6a2c34e",
+    "name": "Nitendo 3DS",
+    "price": 800,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/81oybRmFZnL._AC_.jpg",
+    "description": "Portátil da nintendo que todo mundo usa só pra jogar pokemon"
+  },
+  {
+    "id": "0d78bb33-0b6e-4d27-a4a9-89ab8f2f5790",
+    "name": "JBL Charge 3",
+    "price": 800,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/61TSAn9KKxL._SL1000_.jpg",
+    "description": "Caixa de som muito legal pra alegar sua festa"
+  },
+  {
+    "id": "ae5ed437-ebb4-48a8-93c5-83f0bfaf4507",
+    "name": "Playstation 3 500gb",
+    "price": 500,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/61AlsXa%2BzdL._AC_.jpg",
+    "description": "Console ps3 usado mas em otimo estado"
+  },
+  {
+    "id": "b7889264-675c-47b5-ba11-e69db809bfea",
+    "name": "Catan (jogo de tabuleiro)",
+    "price": 200,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/91nHkVwTzLL._SL1500_.jpg",
+    "description": "Jogo de tabuleiro muito legal pra jogar com os amigos"
+  },
+  {
+    "id": "8ff2e89f-27c3-4327-95a6-250d6390fa06",
+    "name": "Fifa 2017 (PS4)",
+    "price": 50,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/71Z4sxq5IzL._AC_SL1020_.jpg",
+    "description": "Os melhores times do mundo no seu console"
+  },
+   {
+    "id": "da50052c-aeb9-4b30-863a-92a633cc1ea7",
+    "name": "Ipad Air 16GB",
+    "price": 1500,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/517yTZWi4uL.jpg",
+    "description": "Ipad air 16GB em otimo estado, sem arrões, impecável"
+  }
+]
