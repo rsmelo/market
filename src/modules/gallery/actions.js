@@ -9,5 +9,5 @@ import {
 
 export const getProducts = createAction(GET_PRODUCTS)
 export const productsRequest = createAction(PRODUCTS_REQUEST)
-export const productsSucces = createAction(PRODUCTS_SUCCESS)
+export const productsSuccess = createAction(PRODUCTS_SUCCESS)
 export const productsFailure = createAction(PRODUCTS_FAILURE)
