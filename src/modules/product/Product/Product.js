@@ -18,7 +18,7 @@ class Product extends PureComponent {
 
   render () {
     const { product, addToCart } = this.props
-    return (
+    return (product && (
       <div>
         <div>
           <img
@@ -40,7 +40,7 @@ class Product extends PureComponent {
           </div>
         </div>
       </div>
-    )
+    ))
   }
 }
 
