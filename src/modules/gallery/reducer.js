@@ -14,7 +14,7 @@ import {
 } from '../product/types'
 
 const initialState = {
-  products: null,
+  products: [],
   isFetching: false,
 }
 

@@ -6,7 +6,7 @@ describe('Gallery reducer', () => {
   describe('actions in reducer', () => {
     it('should return initial state as default', () => {
       const initialState = {
-        products: null,
+        products: [],
         isFetching: false,
       }
       expect(reducer(undefined, {})).toEqual(initialState)
@@ -14,12 +14,12 @@ describe('Gallery reducer', () => {
 
     it('should return isFetching true on GALLERY/PRODUCTS_REQUEST', () => {
       const state = {
-        products: null,
+        products: [],
         isFetching: false,
       }
       const expected = {
         isFetching: true,
-        products: null,
+        products: [],
       }
       const action = {
         type: types.PRODUCTS_REQUEST,
@@ -30,12 +30,12 @@ describe('Gallery reducer', () => {
 
     it('should return isFetching true on PRODUCT/PRODUCT_REQUEST', () => {
       const state = {
-        products: null,
+        products: [],
         isFetching: false,
       }
       const expected = {
         isFetching: true,
-        products: null,
+        products: [],
       }
       const action = {
         type: productTypes.PRODUCT_REQUEST,
@@ -46,12 +46,12 @@ describe('Gallery reducer', () => {
 
     it('should return isFetching false on GALLERY/PRODUCTS_FAILURE', () => {
       const state = {
-        products: null,
+        products: [],
         isFetching: true,
       }
       const expected = {
         isFetching: false,
-        products: null,
+        products: [],
       }
       const action = {
         type: types.PRODUCTS_FAILURE,
@@ -62,12 +62,12 @@ describe('Gallery reducer', () => {
 
     it('should return isFetching false on PRODUCT/PRODUCT_FAILURE', () => {
       const state = {
-        products: null,
+        products: [],
         isFetching: true,
       }
       const expected = {
         isFetching: false,
-        products: null,
+        products: [],
       }
       const action = {
         type: productTypes.PRODUCT_FAILURE,
@@ -78,7 +78,7 @@ describe('Gallery reducer', () => {
 
     it('should return the state with products and isFetching false on GALLERY/PRODUCTS_SUCCESS', () => {
       const state = {
-        products: null,
+        products: [],
         isFetching: true,
       }
       const products = [
