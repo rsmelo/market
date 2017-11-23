@@ -4,6 +4,11 @@ import PropTypes from 'prop-types'
 import style from './style.css'
 
 class Product extends PureComponent {
+  constructor (props) {
+    super(props)
+    this.renderButtons = this.renderButtons.bind(this)
+  }
+
   componentDidMount () {
     const {
       product,
@@ -16,8 +21,26 @@ class Product extends PureComponent {
     }
   }
 
+  renderButtons () {
+    const {
+      product,
+      addedToCart,
+      removeProduct,
+      addProduct,
+    } = this.props
+
+    if (addedToCart) {
+      return (
+        <button onClick={() => removeProduct(product.id, product.seller.id)}>
+          Remover do carrinho
+        </button>
+      )
+    }
+    return (<button onClick={() => addProduct(product)}>Adicionar ao carrinho</button>)
+  }
+
   render () {
-    const { product, addToCart } = this.props
+    const { product } = this.props
     return (product && (
       <div>
         <div>
@@ -33,7 +56,7 @@ class Product extends PureComponent {
           <p>{product.description}</p>
           <div>
             <span className={style.price}>R$ {product.price}</span>
-            <button onClick={() => addToCart(product.id)}>Comprar</button>
+            {this.renderButtons()}
           </div>
           <div>
             vendido por <span>{product.seller.name}</span>
@@ -46,8 +69,6 @@ class Product extends PureComponent {
 
 Product.defaultProps = {
   product: null,
-  getProduct: null,
-  addToCart: null,
 }
 
 Product.propTypes = {
@@ -63,12 +84,14 @@ Product.propTypes = {
       name: PropTypes.string.isRequired,
     }),
   }),
+  addedToCart: PropTypes.bool.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string,
     }),
   }).isRequired,
-  getProduct: PropTypes.func,
-  addToCart: PropTypes.func,
+  getProduct: PropTypes.func.isRequired,
+  addProduct: PropTypes.func.isRequired,
+  removeProduct: PropTypes.func.isRequired,
 }
 export default Product
