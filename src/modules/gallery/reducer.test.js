@@ -1,5 +1,6 @@
 import reducer, { getIsFetching, getProducts, getProductById } from './reducer'
 import * as types from './types'
+import * as productTypes from '../product/types'
 
 describe('Gallery reducer', () => {
   describe('actions in reducer', () => {
@@ -11,7 +12,7 @@ describe('Gallery reducer', () => {
       expect(reducer(undefined, {})).toEqual(initialState)
     })
 
-    it('should return isFetching true on PRODUCTS_REQUEST', () => {
+    it('should return isFetching true on GALLERY/PRODUCTS_REQUEST', () => {
       const state = {
         products: null,
         isFetching: false,
@@ -27,7 +28,23 @@ describe('Gallery reducer', () => {
       expect(reducer(state, action)).toEqual(expected)
     })
 
-    it('should return isFetching false on PRODUCTS_FAILURE', () => {
+    it('should return isFetching true on PRODUCT/PRODUCT_REQUEST', () => {
+      const state = {
+        products: null,
+        isFetching: false,
+      }
+      const expected = {
+        isFetching: true,
+        products: null,
+      }
+      const action = {
+        type: productTypes.PRODUCT_REQUEST,
+      }
+
+      expect(reducer(state, action)).toEqual(expected)
+    })
+
+    it('should return isFetching false on GALLERY/PRODUCTS_FAILURE', () => {
       const state = {
         products: null,
         isFetching: true,
@@ -43,7 +60,23 @@ describe('Gallery reducer', () => {
       expect(reducer(state, action)).toEqual(expected)
     })
 
-    it('should return the state with products and isFetching false on PRODUCTS_SUCCESS', () => {
+    it('should return isFetching false on PRODUCT/PRODUCT_FAILURE', () => {
+      const state = {
+        products: null,
+        isFetching: true,
+      }
+      const expected = {
+        isFetching: false,
+        products: null,
+      }
+      const action = {
+        type: productTypes.PRODUCT_FAILURE,
+      }
+
+      expect(reducer(state, action)).toEqual(expected)
+    })
+
+    it('should return the state with products and isFetching false on GALLERY/PRODUCTS_SUCCESS', () => {
       const state = {
         products: null,
         isFetching: true,
@@ -72,6 +105,97 @@ describe('Gallery reducer', () => {
       const action = {
         type: types.PRODUCTS_SUCCESS,
         payload: products,
+      }
+
+      expect(reducer(state, action)).toEqual(expected)
+    })
+
+    it('should return the state with products adding new product and isFetching false on PRODUCT/PRODUCT_SUCCESS', () => {
+      const products = [
+        {
+          id: 'a12090',
+          name: 'a product',
+          price: 10,
+          image: 'image-url',
+          description: 'test',
+        },
+        {
+          id: 'a12091',
+          name: 'a product 2',
+          price: 12,
+          image: 'image-url-2',
+          description: 'test-2',
+        },
+      ]
+      const state = {
+        isFetching: true,
+        products,
+      }
+      const newProduct = {
+        id: 'a3000',
+        name: 'a product',
+        price: 10,
+        image: 'image-url',
+        description: 'test',
+      }
+
+      const expected = {
+        isFetching: false,
+        products: [...products, newProduct],
+      }
+      const action = {
+        type: productTypes.PRODUCT_SUCCESS,
+        payload: newProduct,
+      }
+
+      expect(reducer(state, action)).toEqual(expected)
+    })
+
+    it('should return the state with products updating existing product and isFetching false on PRODUCT/PRODUCT_SUCCESS', () => {
+      const products = [
+        {
+          id: 'a12090',
+          name: 'a product',
+          price: 10,
+          image: 'image-url',
+          description: 'test',
+        },
+        {
+          id: 'a12091',
+          name: 'a product 2',
+          price: 12,
+          image: 'image-url-2',
+          description: 'test-2',
+        },
+      ]
+      const state = {
+        isFetching: true,
+        products,
+      }
+      const newProduct = {
+        id: 'a12090',
+        name: 'a product updated',
+        price: 12,
+        image: 'image-url',
+        description: 'test',
+      }
+
+      const expected = {
+        isFetching: false,
+        products: [
+          newProduct,
+          {
+            id: 'a12091',
+            name: 'a product 2',
+            price: 12,
+            image: 'image-url-2',
+            description: 'test-2',
+          },
+        ],
+      }
+      const action = {
+        type: productTypes.PRODUCT_SUCCESS,
+        payload: newProduct,
       }
 
       expect(reducer(state, action)).toEqual(expected)

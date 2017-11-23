@@ -1,10 +1,17 @@
-import { handleActions } from 'redux-actions'
+import { handleActions, combineActions } from 'redux-actions'
 
 import {
   PRODUCTS_REQUEST,
   PRODUCTS_SUCCESS,
   PRODUCTS_FAILURE,
 } from './types'
+
+import {
+  PRODUCT_REQUEST,
+  PRODUCT_SUCCESS,
+  PRODUCT_FAILURE,
+
+} from '../product/types'
 
 const initialState = {
   products: null,
@@ -21,26 +28,38 @@ const productsSuccess = (state, { payload }) => Object.assign(
   }
 )
 
-const productsRequest = state => Object.assign(
+const setIsFetching = value => state => Object.assign(
   {},
   state,
   {
-    isFetching: true,
+    isFetching: value,
   }
 )
 
-const productsFailure = state => Object.assign(
-  {},
-  state,
-  {
-    isFetching: false,
+const productSuccess = (state, { payload }) => {
+  const { products } = state
+  const newProducts = [...products]
+  const currentIndex = newProducts.findIndex(item => item.id === payload.id)
+  if (currentIndex > -1) {
+    newProducts[currentIndex] = payload
+  } else {
+    newProducts.push(payload)
   }
-)
+  return Object.assign(
+    {},
+    state,
+    {
+      products: newProducts,
+      isFetching: false,
+    }
+  )
+}
 
 const handler = {
   [PRODUCTS_SUCCESS]: productsSuccess,
-  [PRODUCTS_REQUEST]: productsRequest,
-  [PRODUCTS_FAILURE]: productsFailure,
+  [PRODUCT_SUCCESS]: productSuccess,
+  [combineActions(PRODUCTS_REQUEST, PRODUCT_REQUEST)]: setIsFetching(true),
+  [combineActions(PRODUCTS_FAILURE, PRODUCT_FAILURE)]: setIsFetching(false),
 }
 
 const gallery = handleActions(handler, initialState)
