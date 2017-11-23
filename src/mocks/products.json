@@ -1,10 +1,11 @@
 [
   {
     "id": "dd5ca2b6-b8ae-4627-95f3-7d49613a0df5",
-    "name": "Abomination",
+    "name": "Abominável",
     "price": 80,
     "image": "https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg",
-    "description": "Action figure marvel select Abomination",
+    "description": "O Abominável (em inglês: Abomination), codinome de Emil Blonsky, é um supervilão do Universo Marvel. Foi criado por Stan Lee e Gil Kane na revista Tales to Astonish #90, de abril de 1967. O Abominável foi declarado pelo IGN como o 54º maior vilão de HQs de todos os tempos e é considerado por muitos o arqui-inimigo do Hulk.",
+    "category": "action figures",
     "seller": {
       "id": "re_cjabsxlgq01t5oq6f3ix79dsn",
       "name": "João"
@@ -16,6 +17,7 @@
     "price": 80,
     "image": "https://images-na.ssl-images-amazon.com/images/I/81vNqNswHGL._SL1500_.jpg",
     "description": "Action figure marvel select Thanos",
+    "category": "Thanos é um supervilão fictício que aparece nas histórias em quadrinhos publicadas pela Marvel Comics. O personagem é descrito geralmente como um Titan mutante, já que apesar de ser poderoso, ele era rejeitado pelos outros por causa de sua aparência. O personagem apareceu pela primeira vez em “Iron Man” #55 (fevereiro de 1973) e foi criado pelo escritor-artista Jim Starlin. Estreando ainda na Era de Prata, o personagem tem sido destaque em mais de quatro décadas de continuidade do Universo Marvel e em uma série de histórias em quadrinhos auto-intitulada.",
     "seller": {
       "id": "re_cjabsxlgq01t5oq6f3ix79dsn",
       "name": "João"
@@ -27,6 +29,7 @@
     "price": 250,
     "image": "https://images-na.ssl-images-amazon.com/images/I/41WhKmsLXmL.jpg",
     "description": "Mouse gamer razer chroma com muitas cores",
+    "category": "mouses",
     "seller": {
       "id": "re_cjabsxlgq01t5oq6f3ix79dsn",
       "name": "João"
@@ -38,6 +41,7 @@
     "price": 800,
     "image": "https://images-na.ssl-images-amazon.com/images/I/81oybRmFZnL._AC_.jpg",
     "description": "Portátil da nintendo que todo mundo usa só pra jogar pokemon",
+    "category": "video games",
     "seller": {
       "id": "re_cjabsxlgq01t5oq6f3ix79dsn",
       "name": "João"
@@ -49,6 +53,7 @@
     "price": 800,
     "image": "https://images-na.ssl-images-amazon.com/images/I/61TSAn9KKxL._SL1000_.jpg",
     "description": "Caixa de som muito legal pra alegar sua festa",
+    "category": "caixas bluetooth",
     "seller": {
       "id": "re_cjabsxlgq01t5oq6f3ix79dsn",
       "name": "João"
@@ -60,6 +65,7 @@
     "price": 500,
     "image": "https://images-na.ssl-images-amazon.com/images/I/61AlsXa%2BzdL._AC_.jpg",
     "description": "Console ps3 usado mas em otimo estado",
+    "category": "video games",
     "seller": {
       "id": "re_cjabsrhv901oxla6fo2g0lfms",
       "name": "Pedro"
@@ -71,6 +77,7 @@
     "price": 200,
     "image": "https://images-na.ssl-images-amazon.com/images/I/91nHkVwTzLL._SL1500_.jpg",
     "description": "Jogo de tabuleiro muito legal pra jogar com os amigos",
+    "category": "jogos de tabuleiro",
     "seller": {
       "id": "re_cjabsrhv901oxla6fo2g0lfms",
       "name": "Pedro"
@@ -82,6 +89,7 @@
     "price": 50,
     "image": "https://images-na.ssl-images-amazon.com/images/I/71Z4sxq5IzL._AC_SL1020_.jpg",
     "description": "Os melhores times do mundo no seu console",
+    "category": "video games",
     "seller": {
       "id": "re_cjabsrhv901oxla6fo2g0lfms",
       "name": "Pedro"
@@ -93,6 +101,7 @@
     "price": 1500,
     "image": "https://images-na.ssl-images-amazon.com/images/I/517yTZWi4uL.jpg",
     "description": "Ipad air 16GB em otimo estado, sem arrões, impecável",
+    "category": "tablets",
     "seller": {
       "id": "re_cjabsrhv901oxla6fo2g0lfms",
       "name": "Pedro"
