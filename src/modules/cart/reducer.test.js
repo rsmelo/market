@@ -1,4 +1,4 @@
-import reducer from './reducer'
+import reducer, { productExistsInCart } from './reducer'
 import * as types from './types'
 
 describe('Cart reducer', () => {
@@ -233,6 +233,75 @@ describe('Cart reducer', () => {
       }
 
       expect(reducer(state, action)).toEqual(expected)
+    })
+  })
+  describe('selectors', () => {
+    describe('productExistsInCart', () => {
+      it('should return true if product exist in cart', () => {
+        const seller = {
+          id: 're_cjabsxlgq01t5oq6f3ix79dsn',
+          name: 'João',
+        }
+        const state = {
+          bySeller: {
+            re_cjabsxlgq01t5oq6f3ix79dsn: {
+              seller,
+              products: [
+                {
+                  id: 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5',
+                  name: 'Abominável',
+                  price: 80,
+                  image: 'https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg',
+                  description: 'description',
+                  category: 'action figures',
+                  seller,
+                },
+              ],
+            },
+          },
+        }
+        const id = 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5'
+        const sellerId = 're_cjabsxlgq01t5oq6f3ix79dsn'
+
+        expect(productExistsInCart(state, id, sellerId)).toEqual(true)
+      })
+      it('should return false if the seller cart exist but product is does not exist', () => {
+        const seller = {
+          id: 're_cjabsxlgq01t5oq6f3ix79dsn',
+          name: 'João',
+        }
+        const state = {
+          bySeller: {
+            re_cjabsxlgq01t5oq6f3ix79dsn: {
+              seller,
+              products: [
+                {
+                  id: 'b5e0f729-8a93-4243-9d65-b272582748c5',
+                  name: 'Abominável',
+                  price: 80,
+                  image: 'https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg',
+                  description: 'description',
+                  category: 'action figures',
+                  seller,
+                },
+              ],
+            },
+          },
+        }
+        const id = 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5'
+        const sellerId = 're_cjabsxlgq01t5oq6f3ix79dsn'
+
+        expect(productExistsInCart(state, id, sellerId)).toEqual(false)
+      })
+      it('should return false if the seller cart does not exist', () => {
+        const state = {
+          bySeller: {},
+        }
+        const id = 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5'
+        const sellerId = 're_cjabsxlgq01t5oq6f3ix79dsn'
+
+        expect(productExistsInCart(state, id, sellerId)).toEqual(false)
+      })
     })
   })
 })

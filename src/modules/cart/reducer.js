@@ -91,3 +91,11 @@ const handler = {
 const cart = handleActions(handler, initialState)
 
 export default cart
+
+export const productExistsInCart = (state, id, sellerId) => {
+  const sellerExists = Object.prototype.hasOwnProperty.call(state.bySeller, sellerId)
+  if (sellerExists) {
+    return state.bySeller[sellerId].products.some(product => product.id === id)
+  }
+  return false
+}
