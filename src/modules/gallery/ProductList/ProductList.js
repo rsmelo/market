@@ -10,9 +10,7 @@ class ProductList extends PureComponent {
   }
 
   componentDidMount () {
-    if (!this.props.products) {
-      this.props.getProducts()
-    }
+    this.props.getProducts()
   }
 
   renderProducts () {
