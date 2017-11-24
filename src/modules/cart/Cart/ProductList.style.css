@@ -1,0 +1,33 @@
+.productList {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #e5e5e5;
+}
+
+.productList tr {
+  border: 1px solid #e5e5e5;
+}
+
+.header {
+  border: 1px solid transparent;
+}
+
+.header > tr > th {
+  border: none;
+  padding: 5px;
+  vertical-align: middle;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.header,
+.footer {
+  background: #eeeeee;
+  color: #333333;
+}
+
+.totalLabel {
+  font-weight: bold;
+  text-align: right;
+}
