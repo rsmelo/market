@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product renders correctly 1`] = `
+<li>
+  <div>
+    <Link
+      to="/product/a12090"
+    >
+      <img
+        alt="a product"
+        className={undefined}
+        src="image-url"
+      />
+    </Link>
+  </div>
+  <div>
+    <h2
+      className={undefined}
+    >
+      a product
+    </h2>
+    <span
+      className={undefined}
+    >
+      R$ 
+      10
+    </span>
+  </div>
+</li>
+`;
