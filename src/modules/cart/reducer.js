@@ -99,3 +99,5 @@ export const productExistsInCart = (state, id, sellerId) => {
   }
   return false
 }
+
+export const getCartList = state => Object.keys(state.bySeller).map(key => state.bySeller[key])
