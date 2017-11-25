@@ -26,9 +26,13 @@ class Cart extends PureComponent {
   }
 
   render () {
+    const { carts } = this.props
     return (
       <div>
-        {this.renderCarts()}
+        {carts.length ?
+          this.renderCarts() :
+          (<p>Você não possui nenhum produto no carrinho</p>)
+        }
       </div>
     )
   }
