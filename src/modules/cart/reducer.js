@@ -5,8 +5,22 @@ import {
   REMOVE_PRODUCT,
 } from './types'
 
+const CART = 'CART'
+
+const loadFromStorage = (key) => {
+  const data = sessionStorage.getItem(key)
+  if (data) {
+    return JSON.parse(data)
+  }
+  return {}
+}
+
+const saveToStorage = (key, data) => {
+  sessionStorage.setItem(key, JSON.stringify(data))
+}
+
 const initialState = {
-  bySeller: {},
+  bySeller: loadFromStorage(CART),
 }
 
 const addBySeller = (cart, product) => {
@@ -40,13 +54,17 @@ const addBySeller = (cart, product) => {
   return newCart
 }
 
-const addProduct = (state, { payload }) => Object.assign(
-  {},
-  state,
-  {
-    bySeller: addBySeller(state.bySeller, payload),
-  }
-)
+const addProduct = (state, { payload }) => {
+  const newState = Object.assign(
+    {},
+    state,
+    {
+      bySeller: addBySeller(state.bySeller, payload),
+    }
+  )
+  saveToStorage(CART, newState.bySeller)
+  return newState
+}
 
 const removeSellerCart = (cart, sellerId) => {
   const newCart = Object.assign({}, cart)
@@ -74,13 +92,17 @@ const removeBySeller = (cart, { sellerId, id }) => {
   )
 }
 
-const removeProduct = (state, { payload }) => Object.assign(
-  {},
-  state,
-  {
-    bySeller: removeBySeller(state.bySeller, payload),
-  }
-)
+const removeProduct = (state, { payload }) => {
+  const newState = Object.assign(
+    {},
+    state,
+    {
+      bySeller: removeBySeller(state.bySeller, payload),
+    }
+  )
+  saveToStorage(CART, newState.bySeller)
+  return newState
+}
 
 
 const handler = {
