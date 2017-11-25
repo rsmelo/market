@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 
 import gallery, * as fromGallery from './gallery/reducer'
 import cart, * as fromCart from './cart/reducer'
 
 const rootReducer = combineReducers({
+  form: formReducer,
   gallery,
   cart,
 })
