@@ -1,0 +1,33 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import FieldNotification from '../FieldNotification/'
+import style from './style.css'
+
+const InputField = ({
+  input,
+  type,
+  id,
+  placeholder,
+  meta: { touched, error },
+}) => (
+  <div className={style.input}>
+    <input {...input} type={type} id={id} placeholder={placeholder} />
+    {touched &&
+      (error && <FieldNotification type="error" message={error} />)}
+  </div>
+)
+
+InputField.defaultProps = {
+  placeholder: null,
+}
+
+InputField.propTypes = {
+  input: PropTypes.shape({}).isRequired,
+  meta: PropTypes.shape({}).isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+}
+
+export default InputField
