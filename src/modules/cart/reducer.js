@@ -4,21 +4,12 @@ import {
   ADD_PRODUCT,
   REMOVE_PRODUCT,
 } from './types'
+import {
+  loadFromStorage,
+  saveToStorage,
+} from '../../utils/storage'
 
 const CART = 'CART'
-
-const loadFromStorage = (key) => {
-  const data = sessionStorage.getItem(key)
-  if (data) {
-    return JSON.parse(data)
-  }
-  return {}
-}
-
-const saveToStorage = (key, data) => {
-  sessionStorage.setItem(key, JSON.stringify(data))
-}
-
 const initialState = {
   bySeller: loadFromStorage(CART),
 }
