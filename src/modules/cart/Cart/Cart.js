@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import ProductList from './ProductList'
 
@@ -18,9 +19,9 @@ class Cart extends PureComponent {
           products={products}
           removeProduct={removeProduct}
         />
-        <button>
+        <Link to={`/checkout/${seller.id}`}>
           Finalizar pedido
-        </button>
+        </Link>
       </div>
     ))
   }
@@ -29,6 +30,7 @@ class Cart extends PureComponent {
     const { carts } = this.props
     return (
       <div>
+        <Link to="/">Continuar comprando</Link>
         {carts.length ?
           this.renderCarts() :
           (<p>Você não possui nenhum produto no carrinho</p>)
