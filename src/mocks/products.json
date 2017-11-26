@@ -16,8 +16,8 @@
     "name": "Thanos",
     "price": 80,
     "image": "https://images-na.ssl-images-amazon.com/images/I/81vNqNswHGL._SL1500_.jpg",
-    "description": "Action figure marvel select Thanos",
-    "category": "Thanos é um supervilão fictício que aparece nas histórias em quadrinhos publicadas pela Marvel Comics. O personagem é descrito geralmente como um Titan mutante, já que apesar de ser poderoso, ele era rejeitado pelos outros por causa de sua aparência. O personagem apareceu pela primeira vez em “Iron Man” #55 (fevereiro de 1973) e foi criado pelo escritor-artista Jim Starlin. Estreando ainda na Era de Prata, o personagem tem sido destaque em mais de quatro décadas de continuidade do Universo Marvel e em uma série de histórias em quadrinhos auto-intitulada.",
+    "description": "Thanos é um supervilão fictício que aparece nas histórias em quadrinhos publicadas pela Marvel Comics. O personagem é descrito geralmente como um Titan mutante, já que apesar de ser poderoso, ele era rejeitado pelos outros por causa de sua aparência. O personagem apareceu pela primeira vez em “Iron Man” #55 (fevereiro de 1973) e foi criado pelo escritor-artista Jim Starlin. Estreando ainda na Era de Prata, o personagem tem sido destaque em mais de quatro décadas de continuidade do Universo Marvel e em uma série de histórias em quadrinhos auto-intitulada.",
+    "category": "action figures",
     "seller": {
       "id": "re_cjabsxlgq01t5oq6f3ix79dsn",
       "name": "João"
@@ -102,6 +102,18 @@
     "image": "https://images-na.ssl-images-amazon.com/images/I/517yTZWi4uL.jpg",
     "description": "Ipad air 16GB em otimo estado, sem arrões, impecável",
     "category": "tablets",
+    "seller": {
+      "id": "re_cjabsrhv901oxla6fo2g0lfms",
+      "name": "Pedro"
+    }
+  },
+  {
+    "id": "e5782e8a-1902-45e2-8d65-a042d67569e9",
+    "name": "Battlefield 4 PS4",
+    "price": 80,
+    "image": "https://images-na.ssl-images-amazon.com/images/I/81vTqGZ%2B37L._AC_SL1500_.jpg",
+    "description": "Jogo de tiro muito legal, em perfeito estado, compra ai",
+    "category": "games",
     "seller": {
       "id": "re_cjabsrhv901oxla6fo2g0lfms",
       "name": "Pedro"
