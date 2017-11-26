@@ -18,3 +18,4 @@ export const getGalleryProductById = (state, id) => fromGallery.getProductById(s
 export const getExistProductInCart = (state, id, sellerId) =>
   fromCart.productExistsInCart(state.cart, id, sellerId)
 export const getCartList = state => fromCart.getCartList(state.cart)
+export const getCartBySeller = (state, sellerId) => fromCart.getCartBySeller(state.cart, sellerId)

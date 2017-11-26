@@ -123,3 +123,4 @@ export const productExistsInCart = (state, id, sellerId) => {
 }
 
 export const getCartList = state => Object.keys(state.bySeller).map(key => state.bySeller[key])
+export const getCartBySeller = (state, sellerId) => state.bySeller[sellerId]
