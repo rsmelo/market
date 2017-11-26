@@ -13,7 +13,7 @@ class Cart extends PureComponent {
   renderCarts () {
     const { carts, removeProduct } = this.props
     return carts.map(({ seller, products }) => (
-      <div>
+      <div key={seller.id}>
         <span>vendido por {seller.name}</span>
         <ProductList
           products={products}
