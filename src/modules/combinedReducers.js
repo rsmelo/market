@@ -3,11 +3,13 @@ import { reducer as formReducer } from 'redux-form'
 
 import gallery, * as fromGallery from './gallery/reducer'
 import cart, * as fromCart from './cart/reducer'
+import order, * as fromOrder from './order/reducer'
 
 const rootReducer = combineReducers({
   form: formReducer,
   gallery,
   cart,
+  order,
 })
 
 export default rootReducer
@@ -19,3 +21,4 @@ export const getExistProductInCart = (state, id, sellerId) =>
   fromCart.productExistsInCart(state.cart, id, sellerId)
 export const getCartList = state => fromCart.getCartList(state.cart)
 export const getCartBySeller = (state, sellerId) => fromCart.getCartBySeller(state.cart, sellerId)
+export const getOrder = (state, id) => fromOrder.getOrder(state.order, id)
