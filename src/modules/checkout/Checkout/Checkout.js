@@ -15,10 +15,11 @@ const Checkout = ({
   submitting,
   handleSubmit,
   onSubmit,
+  history: { push },
 }) => (
   <div>
     <form
-      onSubmit={handleSubmit(data => onSubmit({ data, cart }))}
+      onSubmit={handleSubmit(data => onSubmit({ data, cart, push }))}
       className={style.checkout}
     >
       <CustomerForm />
@@ -48,6 +49,9 @@ Checkout.propTypes = {
   submitting: PropTypes.bool.isRequired,
   pristine: PropTypes.bool.isRequired,
   error: PropTypes.string,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 }
 
 export default reduxForm({
