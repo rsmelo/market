@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 
 import Product from './Product'
 import style from './ProductList.style.css'
+import calculateTotal from '../../../utils/calculateTotal'
 
-const totalReducer = (acc, current) => acc + current.price
-const calculateTotal = products => products.reduce(totalReducer, 0)
 
 const ProductList = ({ products, removeProduct }) => (
   <table className={style.productList}>
@@ -19,6 +18,7 @@ const ProductList = ({ products, removeProduct }) => (
     <tbody>
       {products.map(product => (
         <Product
+          key={product.id}
           {...product}
           onRemove={removeProduct}
         />
