@@ -9,13 +9,18 @@ import validate from './validate'
 import style from './style.css'
 
 const Checkout = ({
+  cart,
   error,
   pristine,
   submitting,
   handleSubmit,
+  onSubmit,
 }) => (
   <div>
-    <form onSubmit={handleSubmit} className={style.checkout}>
+    <form
+      onSubmit={handleSubmit(data => onSubmit({ data, cart }))}
+      className={style.checkout}
+    >
       <CustomerForm />
       <AddressForm />
       <PaymentForm />
@@ -37,7 +42,9 @@ Checkout.defaultProps = {
 }
 
 Checkout.propTypes = {
+  cart: PropTypes.shape({}).isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
   submitting: PropTypes.bool.isRequired,
   pristine: PropTypes.bool.isRequired,
   error: PropTypes.string,
