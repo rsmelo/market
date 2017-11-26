@@ -112,4 +112,8 @@ export async function createPayment (payload) {
   return transaction
 }
 
-export default createPayment
+export async function getPayables (transactionId) {
+  const client = await getClient()
+  const payables = await client.payables.find({ transactionId })
+  return payables
+}
