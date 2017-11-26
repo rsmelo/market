@@ -1,8 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { reduxForm, Field } from 'redux-form'
+import { reduxForm } from 'redux-form'
 
-import InputField from '../../../components/InputField'
+import CustomerForm from './CustomerForm'
+import AddressForm from './AddressForm'
+import PaymentForm from './PaymentForm'
+import validate from './validate'
+import style from './style.css'
 
 const Checkout = ({
   error,
@@ -11,41 +15,18 @@ const Checkout = ({
   handleSubmit,
 }) => (
   <div>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Nome</label>
-      <Field
-        id="name"
-        name="name"
-        type="input"
-        component={InputField}
-      />
-      <label htmlFor="email">E-mail</label>
-      <Field
-        id="email"
-        name="email"
-        type="input"
-        component={InputField}
-      />
-      <label htmlFor="phone">Telefone</label>
-      <Field
-        id="phone"
-        name="phone"
-        type="input"
-        component={InputField}
-      />
-      <label htmlFor="personId">CPF</label>
-      <Field
-        id="personId"
-        name="personId"
-        type="input"
-        component={InputField}
-      />
-      <button
-        type="submit"
-        disabled={pristine || submitting}
-      >
-        Finalizar compra
-      </button>
+    <form onSubmit={handleSubmit} className={style.checkout}>
+      <CustomerForm />
+      <AddressForm />
+      <PaymentForm />
+      <div>
+        <button
+          type="submit"
+          disabled={pristine || submitting}
+        >
+          Finalizar compra
+        </button>
+      </div>
       {error}
     </form>
   </div>
@@ -64,5 +45,6 @@ Checkout.propTypes = {
 
 export default reduxForm({
   form: 'checkout',
+  validate,
 })(Checkout)
 
