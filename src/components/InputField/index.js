@@ -10,9 +10,10 @@ const InputField = ({
   id,
   placeholder,
   meta: { touched, error },
+  ...props
 }) => (
   <div className={style.input}>
-    <input {...input} type={type} id={id} placeholder={placeholder} />
+    <input {...input} type={type} id={id} placeholder={placeholder} {...props} />
     {touched &&
       (error && <FieldNotification type="error" message={error} />)}
   </div>
@@ -20,6 +21,7 @@ const InputField = ({
 
 InputField.defaultProps = {
   placeholder: null,
+  maxLength: null,
 }
 
 InputField.propTypes = {
@@ -28,6 +30,7 @@ InputField.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  maxLength: PropTypes.number,
 }
 
 export default InputField
