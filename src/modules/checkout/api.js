@@ -101,10 +101,15 @@ const createData = ({ cart, data }) => {
   }
 }
 
-const createPayment = (payload) => {
-  const data = createData(payload)
+function getClient () {
   return pagarme.client.connect({ api_key: process.env.REACT_APP_API_KEY })
-    .then(client => client.transactions.create(data))
+}
+
+export async function createPayment (payload) {
+  const data = createData(payload)
+  const client = await getClient()
+  const transaction = await client.transactions.create(data)
+  return transaction
 }
 
 export default createPayment
