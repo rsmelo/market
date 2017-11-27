@@ -10,19 +10,19 @@ const Product = ({
   price,
   image,
 }) => (
-  <li>
-    <div>
+  <li className={style.product}>
+    <Link to={`/product/${id}`}>
+      <img
+        className={style.image}
+        src={image}
+        alt={name}
+      />
+    </Link>
+    <div className={style.information}>
       <Link to={`/product/${id}`}>
-        <img
-          className={style.image}
-          src={image}
-          alt={name}
-        />
+        <h2 className={style.name}>{name}</h2>
+        <span className={style.price}>R$ {price}</span>
       </Link>
-    </div>
-    <div>
-      <h2 className={style.name}>{name}</h2>
-      <span className={style.price}>R$ {price}</span>
     </div>
   </li>
 )

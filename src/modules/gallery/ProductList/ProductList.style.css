@@ -1,0 +1,7 @@
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 75%;
+  padding: 1em 2em;
+}

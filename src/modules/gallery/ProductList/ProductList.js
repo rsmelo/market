@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
 import Product from './Product'
+import styles from './ProductList.style.css'
 
 class ProductList extends PureComponent {
   constructor (props) {
@@ -22,7 +23,7 @@ class ProductList extends PureComponent {
 
   render () {
     return (
-      <ul>
+      <ul className={styles.productList}>
         {this.renderProducts()}
       </ul>
     )

@@ -1,8 +1,7 @@
 @import "./colors.css";
 
 body {
-  background-color: #ffffff;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   padding: 0;
@@ -13,4 +12,8 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
