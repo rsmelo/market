@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Button from '../../../components/Button'
 import style from './Product.style.css'
 
 const Product = ({
@@ -22,9 +23,9 @@ const Product = ({
     <td className={style.productCell}>{name}</td>
     <td className={style.productCell}>R$ {price}</td>
     <td className={style.productCell}>
-      <button onClick={() => onRemove(id, seller.id)}>
+      <Button onClick={() => onRemove(id, seller.id)}>
         Remover do carrinho
-      </button>
+      </Button>
     </td>
   </tr>
 )

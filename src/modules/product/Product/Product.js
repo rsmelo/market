@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
+import Button from '../../../components/Button'
+import ButtonLink from '../../../components/ButtonLink'
 import style from './style.css'
 
 class Product extends PureComponent {
@@ -31,35 +33,54 @@ class Product extends PureComponent {
 
     if (addedToCart) {
       return (
-        <button onClick={() => removeProduct(product.id, product.seller.id)}>
+        <Button
+          color="grey"
+          appearance="outline"
+          onClick={() => removeProduct(product.id, product.seller.id)}
+        >
           Remover do carrinho
-        </button>
+        </Button>
       )
     }
-    return (<button onClick={() => addProduct(product)}>Adicionar ao carrinho</button>)
+    return (
+      <Button
+        onClick={() => addProduct(product)}
+      >
+        Adicionar ao carrinho
+      </Button>)
   }
 
   render () {
     const { product } = this.props
     return (product && (
-      <div>
+      <div className={style.product}>
         <div>
+          <ButtonLink to="/" appearance="outline">
+            Ver outros produtos
+          </ButtonLink>
+        </div>
+        <div className={style.imageContainer}>
           <img
             className={style.image}
             src={product.image}
             alt={product.name}
           />
         </div>
-        <div>
+        <div className={style.info}>
           <h2 className={style.name}>{product.name}</h2>
           <span className={style.category}>{product.category}</span>
-          <p>{product.description}</p>
-          <div>
+          <p className={style.description}>{product.description}</p>
+          <div className={style.priceContainer}>
             <span className={style.price}>R$ {product.price}</span>
-            {this.renderButtons()}
+            <div className={style.buttonContainer}>
+              {this.renderButtons()}
+              <ButtonLink to="/cart" appearance="outline">
+                ir para o carrinho
+              </ButtonLink>
+            </div>
           </div>
-          <div>
-            vendido por <span>{product.seller.name}</span>
+          <div className={style.sellerContainer}>
+            vendido por <span className={style.seller}>{product.seller.name}</span>
           </div>
         </div>
       </div>

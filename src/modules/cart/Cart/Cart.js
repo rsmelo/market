@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
 import ProductList from './ProductList'
+import ButtonLink from '../../../components/ButtonLink'
+import style from './style.css'
 
 class Cart extends PureComponent {
   constructor (props) {
@@ -13,15 +14,15 @@ class Cart extends PureComponent {
   renderCarts () {
     const { carts, removeProduct } = this.props
     return carts.map(({ seller, products }) => (
-      <div key={seller.id}>
+      <div key={seller.id} className={style.cartContainer}>
         <span>vendido por {seller.name}</span>
         <ProductList
           products={products}
           removeProduct={removeProduct}
         />
-        <Link to={`/checkout/${seller.id}`}>
+        <ButtonLink to={`/checkout/${seller.id}`}>
           Finalizar pedido
-        </Link>
+        </ButtonLink>
       </div>
     ))
   }
@@ -29,8 +30,10 @@ class Cart extends PureComponent {
   render () {
     const { carts } = this.props
     return (
-      <div>
-        <Link to="/">Continuar comprando</Link>
+      <div className={style.container}>
+        <ButtonLink to="/" appearance="outline">
+          Continuar comprando
+        </ButtonLink>
         {carts.length ?
           this.renderCarts() :
           (<p>Você não possui nenhum produto no carrinho</p>)
