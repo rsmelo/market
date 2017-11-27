@@ -9,6 +9,7 @@
   transition: 0.2s ease-out;
   border-style: solid;
   border-width: 1px;
+  display: inline-block;
 }
 
 .flat-green,
