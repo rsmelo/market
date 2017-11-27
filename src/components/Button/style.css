@@ -1,0 +1,61 @@
+.button {
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 4px;
+  outline: 0;
+  padding: 14px 18px;
+  transition: 0.2s ease-out;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.flat-green,
+.flat-grey {
+  color: var(--color-white);
+}
+
+.flat-green {
+  background: var(--color-light-green);
+  border-color: var(--color-light-green);
+}
+
+.flat-green:hover {
+  background: var(--color-dark-green);
+  border-color: var(--color-dark-green);
+}
+
+.flat-grey {
+  background: var(--color-ligther-grey);
+  border-color: var(--color-ligther-green);
+}
+
+.flat-grey:hover {
+  background-color: var(--color-ligth-grey);
+  border-color: var(--color-light-ligthgreen);
+}
+
+.outline {
+  background: transparent;
+}
+
+.outline-green {
+  color: var(--color-light-green);
+  border-color: var(--color-light-green);
+}
+
+.outline-green:hover {
+  color: var(--color-dark-green);
+  border-color: var(--color-dark-green);
+}
+
+.outline-grey {
+  color: var(--color-ligther-grey);
+  border-color: var(--color-ligther-green);
+}
+
+.outline-grey:hover {
+  color: var(--color-ligth-grey);
+  border-color: var(--color-light-ligthgreen);
+}
