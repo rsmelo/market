@@ -3,13 +3,13 @@ import { Field } from 'redux-form'
 
 import InputField from '../../../components/InputField'
 import normalizeZipcode from '../../../utils/normalize/normalizeZipcode'
-
+import style from './style.css'
 
 const maskZipcode = '00000-000'
 
 const AddressForm = () => (
-  <div>
-    <h2>Endereço</h2>
+  <div className={style.form}>
+    <h2>2. Endereço</h2>
     <label htmlFor="street">Rua</label>
     <Field
       id="street"

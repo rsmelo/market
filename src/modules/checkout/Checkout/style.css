@@ -1,6 +1,21 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .checkout {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: space-around;
-  width: 80%;
+}
+
+.formContainer {
+  display: flex;
+}
+
+.form {
+  background-color: var(--color-10-grey);
+  padding: 1em;
+  border-radius: 2px;
+  margin: 1em;
 }

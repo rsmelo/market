@@ -6,6 +6,7 @@ import CustomerForm from './CustomerForm'
 import AddressForm from './AddressForm'
 import PaymentForm from './PaymentForm'
 import validate from './validate'
+import Button from '../../../components/Button'
 import style from './style.css'
 
 const Checkout = ({
@@ -17,21 +18,23 @@ const Checkout = ({
   onSubmit,
   history: { push },
 }) => (
-  <div>
+  <div className={style.container}>
     <form
       onSubmit={handleSubmit(data => onSubmit({ data, cart, push }))}
       className={style.checkout}
     >
-      <CustomerForm />
-      <AddressForm />
-      <PaymentForm />
+      <div className={style.formContainer}>
+        <CustomerForm />
+        <AddressForm />
+        <PaymentForm />
+      </div>
       <div>
-        <button
+        <Button
           type="submit"
           disabled={pristine || submitting}
         >
           Finalizar compra
-        </button>
+        </Button>
       </div>
       {error}
     </form>

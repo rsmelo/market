@@ -4,14 +4,15 @@ import { Field } from 'redux-form'
 import InputField from '../../../components/InputField'
 import normalizeCPF from '../../../utils/normalize/normalizeCPF'
 import normalizePhone from '../../../utils/normalize/normalizePhone'
+import style from './style.css'
 
 const maskCPF = '000.000.000-00'
 const maskPhone = '(00) 0000-0000'
 
 
 const CustomerForm = () => (
-  <div>
-    <h2>Dados Pessoais</h2>
+  <div className={style.form}>
+    <h2>1. Dados Pessoais</h2>
     <label htmlFor="name">Nome</label>
     <Field
       id="name"
