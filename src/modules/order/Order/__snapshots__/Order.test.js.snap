@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order renders correctly 1`] = `
+<div>
+  Valor: 
+  <div>
+    <Link
+      to="/"
+    >
+      Voltar a loja
+    </Link>
+  </div>
+</div>
+`;
