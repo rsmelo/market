@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 
-import style from '../Button/style.css'
+import style from './style.css'
+import styleButton from '../Button/style.css'
 
 const Button = ({
   to,
@@ -12,9 +13,9 @@ const Button = ({
   appearance,
 }) => {
   const styles = classNames(
-    style.button,
-    style[appearance],
-    style[`${appearance}-${color}`]
+    style.buttonLink,
+    styleButton[appearance],
+    styleButton[`${appearance}-${color}`]
   )
 
   return (

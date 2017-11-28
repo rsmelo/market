@@ -1,0 +1,4 @@
+.buttonLink {
+  composes: button from "../Button/style.css";
+  display: inline-block;
+}
