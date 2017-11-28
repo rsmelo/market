@@ -1,26 +1,10 @@
-import { createPayment } from './api'
+import { createPayment, getPayables } from './api'
 
-jest.mock('react-router-dom', () => ({ Link: 'Link' }))
-
-const mockCreate = () => (new Promise((resolve) => {
-  resolve({ id: 1 })
-}))
-
-jest.mock('pagarme', () => ({
-  client: {
-    connect: () => (new Promise((resolve) => {
-      resolve({
-        transaction: {
-          create: mockCreate,
-        },
-      })
-    })),
-  },
-}))
+jest.mock('pagarme')
 
 describe('checkout api', () => {
   describe('createPayment', () => {
-    it('should return a transaction', () => {
+    it('should return a transaction', async () => {
       const payload = {
         data: {
           cardNumber: '1234',
@@ -48,10 +32,22 @@ describe('checkout api', () => {
           }],
         },
       }
-      expect.assertions(1)
-      return createPayment(payload).then(data => expect(data).toEqual({
-        id: 1,
-      }))
+      const expected = {
+        amount: 1000,
+      }
+      const data = await createPayment(payload)
+      expect(data).toEqual(expected)
+    })
+  })
+  describe('getPayables', () => {
+    it('should return a transaction payables', async () => {
+      const transactionId = 123
+      const expected = [
+        { transactionId },
+        { transactionId },
+      ]
+      const data = await getPayables(transactionId)
+      expect(data).toEqual(expected)
     })
   })
 })
