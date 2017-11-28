@@ -48,7 +48,7 @@ const validate = (values) => {
   }
 
   if (!city) {
-    errors.city = 'Cidade é obrigatório'
+    errors.city = 'Cidade é obrigatória'
   }
 
   if (!state) {
