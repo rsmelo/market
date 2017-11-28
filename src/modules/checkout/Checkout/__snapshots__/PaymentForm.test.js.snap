@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentForm renders correctly 1`] = `
+<div
+  className={undefined}
+>
+  <h2>
+    3. Pagamento
+  </h2>
+  <label
+    htmlFor="cardNumber"
+  >
+    Número do cartão
+  </label>
+  <Field
+    component={[Function]}
+    id="cardNumber"
+    name="cardNumber"
+    normalize={[Function]}
+    placeholder="0000 0000 0000 0000"
+    type="input"
+  />
+  <label
+    htmlFor="cardHolderName"
+  >
+    Nome do titular
+  </label>
+  <Field
+    component={[Function]}
+    id="cardHolderName"
+    name="cardHolderName"
+    type="input"
+  />
+  <label
+    htmlFor="cardExpirationDate"
+  >
+    Expira em
+  </label>
+  <Field
+    component={[Function]}
+    id="cardExpirationDate"
+    name="cardExpirationDate"
+    normalize={[Function]}
+    placeholder="00/00"
+    type="input"
+  />
+  <label
+    htmlFor="cardCvv"
+  >
+    Código de segurança
+  </label>
+  <Field
+    component={[Function]}
+    id="cardCvv"
+    maxLength={4}
+    name="cardCvv"
+    type="input"
+  />
+</div>
+`;

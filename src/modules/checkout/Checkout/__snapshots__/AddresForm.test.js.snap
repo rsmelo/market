@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressForm renders correctly 1`] = `
+<div
+  className={undefined}
+>
+  <h2>
+    2. Endereço
+  </h2>
+  <label
+    htmlFor="street"
+  >
+    Rua
+  </label>
+  <Field
+    component={[Function]}
+    id="street"
+    name="street"
+    type="input"
+  />
+  <label
+    htmlFor="streetNumber"
+  >
+    Número
+  </label>
+  <Field
+    component={[Function]}
+    id="streetNumber"
+    name="streetNumber"
+    type="input"
+  />
+  <label
+    htmlFor="complementary"
+  >
+    Complemento
+  </label>
+  <Field
+    component={[Function]}
+    id="complementary"
+    name="complementary"
+    type="input"
+  />
+  <label
+    htmlFor="neighborhood"
+  >
+    Bairro
+  </label>
+  <Field
+    component={[Function]}
+    id="neighborhood"
+    name="neighborhood"
+    type="input"
+  />
+  <label
+    htmlFor="city"
+  >
+    Cidade
+  </label>
+  <Field
+    component={[Function]}
+    id="city"
+    name="city"
+    type="input"
+  />
+  <label
+    htmlFor="state"
+  >
+    Estado
+  </label>
+  <Field
+    component={[Function]}
+    id="state"
+    name="state"
+    type="input"
+  />
+  <label
+    htmlFor="zipcode"
+  >
+    CEP
+  </label>
+  <Field
+    component={[Function]}
+    id="zipcode"
+    name="zipcode"
+    normalize={[Function]}
+    placeholder="00000-000"
+    type="input"
+  />
+</div>
+`;

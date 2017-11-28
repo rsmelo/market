@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressForm renders correctly 1`] = `
+<div
+  className={undefined}
+>
+  <h2>
+    1. Dados Pessoais
+  </h2>
+  <label
+    htmlFor="name"
+  >
+    Nome
+  </label>
+  <Field
+    component={[Function]}
+    id="name"
+    name="name"
+    type="input"
+  />
+  <label
+    htmlFor="email"
+  >
+    E-mail
+  </label>
+  <Field
+    component={[Function]}
+    id="email"
+    name="email"
+    type="input"
+  />
+  <label
+    htmlFor="personCode"
+  >
+    CPF
+  </label>
+  <Field
+    component={[Function]}
+    id="personCode"
+    name="personCode"
+    normalize={[Function]}
+    placeholder="000.000.000-00"
+    type="input"
+  />
+  <label
+    htmlFor="phone"
+  >
+    Telefone
+  </label>
+  <Field
+    component={[Function]}
+    id="phone"
+    name="phone"
+    normalize={[Function]}
+    placeholder="(00) 0000-0000"
+    type="input"
+  />
+</div>
+`;
