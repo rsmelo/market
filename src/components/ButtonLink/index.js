@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import style from './style.css'
 import styleButton from '../Button/style.css'
 
-const Button = ({
+const ButtonLink = ({
   to,
   children,
   color,
@@ -29,13 +29,13 @@ const Button = ({
 }
 
 
-Button.defaultProps = {
+ButtonLink.defaultProps = {
   to: null,
   appearance: 'flat',
   color: 'green',
 }
 
-Button.propTypes = {
+ButtonLink.propTypes = {
   to: PropTypes.string,
   appearance: PropTypes.oneOf([
     'flat', 'outline',
@@ -50,4 +50,4 @@ Button.propTypes = {
   ]).isRequired,
 }
 
-export default Button
+export default ButtonLink
