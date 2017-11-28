@@ -13,10 +13,10 @@ export function* doPayment ({ payload }) {
     const { data, cart, push } = payload
     yield put(actions.paymentRequest())
     const transaction = yield call(createPayment, { data, cart })
-    yield put(actions.paymentSuccess(transaction))
     const payables = yield call(getPayables, transaction.id)
     yield put(orderActions.addOrder({ ...transaction, payables }))
-    push(`/order/${transaction.id}`)
+    yield put(actions.paymentSuccess(transaction))
+    yield call(push, `/order/${transaction.id}`)
   } catch (error) {
     yield put(actions.paymentFailure(error.message))
   }
