@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList should render correctly 1`] = `
+<table
+  className={undefined}
+>
+  <thead
+    className={undefined}
+  >
+    <tr>
+      <th
+        colSpan="2"
+      >
+        Produto(s)
+      </th>
+      <th>
+        Preço
+      </th>
+      <th />
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td
+        className=""
+      >
+        <img
+          alt="Abominável"
+          className={undefined}
+          src="https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg"
+        />
+      </td>
+      <td
+        className=""
+      >
+        Abominável
+      </td>
+      <td
+        className=""
+      >
+        R$ 
+        80
+      </td>
+      <td
+        className=""
+      >
+        <button
+          className=""
+          onClick={[Function]}
+          type="button"
+        >
+          Remover do carrinho
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot
+    className={undefined}
+  >
+    <tr>
+      <td
+        colSpan="2"
+      />
+      <td />
+      <td
+        className={undefined}
+      >
+        <span>
+          Total
+        </span>
+         R$ 
+        80
+      </td>
+    </tr>
+  </tfoot>
+</table>
+`;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product should render correctly 1`] = `
+<tr>
+  <td
+    className=""
+  >
+    <img
+      alt="Abominável"
+      className={undefined}
+      src="https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg"
+    />
+  </td>
+  <td
+    className=""
+  >
+    Abominável
+  </td>
+  <td
+    className=""
+  >
+    R$ 
+    80
+  </td>
+  <td
+    className=""
+  >
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      Remover do carrinho
+    </button>
+  </td>
+</tr>
+`;
