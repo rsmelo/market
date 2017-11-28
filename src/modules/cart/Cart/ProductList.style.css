@@ -15,19 +15,22 @@
 
 .header > tr > th {
   border: none;
-  padding: 5px;
+  padding: 0 5px;
   vertical-align: middle;
-  line-height: 1.4;
+  line-height: 1.7;
   text-align: left;
 }
 
 .header,
 .footer {
-  background: #eeeeee;
-  color: #333333;
+  background: var(--color-10-grey);
+  color: var(--color-dark-grey);
 }
 
 .totalLabel {
   font-weight: bold;
   text-align: right;
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 0 5px;
 }

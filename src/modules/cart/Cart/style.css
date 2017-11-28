@@ -1,8 +1,25 @@
-.container {
-  margin-top: 4em;
+.outsideBox {
+  display: flex;
+  justify-content: center;
 }
 
-.cartContainer {
-  padding: 0 2em;
-  margin-top: 1em;
+.container {
+  margin: 4em;
+  flex-basis: 1170px;
+}
+
+.seller {
+  color: var(--color-ligth-grey);
+  margin: 0.5em 0;
+  font-size: 18px;
+}
+
+.submitButtonContainer,
+.backButtonContainer {
+  padding: 0.8em 0;
+}
+
+.submitButtonContainer {
+  display: flex;
+  flex-direction: row-reverse;
 }

@@ -1,8 +1,21 @@
 .image {
-  width: 80px;
-  height: 100px;
+  width: 100px;
+  height: 120px;
 }
 
 .productCell {
   vertical-align: middle;
+  padding: 0.4em;
+}
+
+.buttonCell {
+  text-align: right;
+}
+
+.smallCell {
+  width: 10%;
+}
+
+.largeCell {
+  width: 40%;
 }

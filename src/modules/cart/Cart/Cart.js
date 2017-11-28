@@ -14,15 +14,17 @@ class Cart extends PureComponent {
   renderCarts () {
     const { carts, removeProduct } = this.props
     return carts.map(({ seller, products }) => (
-      <div key={seller.id} className={style.cartContainer}>
-        <span>vendido por {seller.name}</span>
+      <div key={seller.id}>
+        <h2 className={style.seller}>Vendido por {seller.name}</h2>
         <ProductList
           products={products}
           removeProduct={removeProduct}
         />
-        <ButtonLink to={`/checkout/${seller.id}`}>
-          Finalizar pedido
-        </ButtonLink>
+        <div className={style.submitButtonContainer}>
+          <ButtonLink to={`/checkout/${seller.id}`}>
+            Finalizar pedido
+          </ButtonLink>
+        </div>
       </div>
     ))
   }
@@ -30,14 +32,18 @@ class Cart extends PureComponent {
   render () {
     const { carts } = this.props
     return (
-      <div className={style.container}>
-        <ButtonLink to="/" appearance="outline">
-          Continuar comprando
-        </ButtonLink>
-        {carts.length ?
-          this.renderCarts() :
-          (<p>Você não possui nenhum produto no carrinho</p>)
-        }
+      <div className={style.outsideBox}>
+        <div className={style.container}>
+          <div className={style.backButtonContainer}>
+            <ButtonLink to="/" appearance="outline">
+              Continuar comprando
+            </ButtonLink>
+          </div>
+          {carts.length ?
+            this.renderCarts() :
+            (<p>Você não possui nenhum produto no carrinho</p>)
+          }
+        </div>
       </div>
     )
   }

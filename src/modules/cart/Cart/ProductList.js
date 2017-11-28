@@ -28,8 +28,10 @@ const ProductList = ({ products, removeProduct }) => (
     <tfoot className={style.footer}>
       <tr>
         <td colSpan="2" />
-        <td className={style.totalLabel}>Total</td>
-        <td>R$ {calculateTotal(products)}</td>
+        <td />
+        <td className={style.totalLabel}>
+          <span>Total</span> R$ {calculateTotal(products)}
+        </td>
       </tr>
     </tfoot>
   </table>
