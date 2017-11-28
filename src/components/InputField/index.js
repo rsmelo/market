@@ -15,7 +15,7 @@ const InputField = ({
   <div className={style.input}>
     <input {...input} type={type} id={id} placeholder={placeholder} {...props} />
     {touched &&
-      (error && <FieldNotification type="error" message={error} />)}
+      (error && <FieldNotification type="error" >{error}</FieldNotification>)}
   </div>
 )
 
@@ -26,7 +26,10 @@ InputField.defaultProps = {
 
 InputField.propTypes = {
   input: PropTypes.shape({}).isRequired,
-  meta: PropTypes.shape({}).isRequired,
+  meta: PropTypes.shape({
+    touched: PropTypes.bool.isRequired,
+    error: PropTypes.string,
+  }).isRequired,
   placeholder: PropTypes.string,
   type: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputField should render correctly 1`] = `
+<div
+  className={undefined}
+>
+  <input
+    id="name"
+    maxLength={null}
+    placeholder={null}
+    type="text"
+  />
+  <span
+    className=""
+  >
+    teste
+  </span>
+</div>
+`;
