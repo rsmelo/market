@@ -4,15 +4,23 @@ import classNames from 'classnames'
 
 import style from './style.css'
 
-const FieldNotification = ({ message, type }) => (
+const FieldNotification = ({ children, type }) => (
   <span className={classNames(style.fieldNotification, style[type])}>
-    {message}
+    {children}
   </span>
 )
 
+FieldNotification.defaultProps = {
+  type: 'error',
+}
+
 FieldNotification.propTypes = {
-  message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['success', 'error']).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.string,
+    PropTypes.node,
+  ]).isRequired,
+  type: PropTypes.oneOf(['success', 'error']),
 }
 
 export default FieldNotification
