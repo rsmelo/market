@@ -1,4 +1,8 @@
-import reducer, { productExistsInCart } from './reducer'
+import reducer, {
+  productExistsInCart,
+  getCartList,
+  getCartBySeller,
+} from './reducer'
 import * as types from './types'
 
 describe('Cart reducer', () => {
@@ -236,12 +240,12 @@ describe('Cart reducer', () => {
     })
   })
   describe('selectors', () => {
+    const seller = {
+      id: 're_cjabsxlgq01t5oq6f3ix79dsn',
+      name: 'João',
+    }
     describe('productExistsInCart', () => {
       it('should return true if product exist in cart', () => {
-        const seller = {
-          id: 're_cjabsxlgq01t5oq6f3ix79dsn',
-          name: 'João',
-        }
         const state = {
           bySeller: {
             re_cjabsxlgq01t5oq6f3ix79dsn: {
@@ -266,10 +270,6 @@ describe('Cart reducer', () => {
         expect(productExistsInCart(state, id, sellerId)).toEqual(true)
       })
       it('should return false if the seller cart exist but product is does not exist', () => {
-        const seller = {
-          id: 're_cjabsxlgq01t5oq6f3ix79dsn',
-          name: 'João',
-        }
         const state = {
           bySeller: {
             re_cjabsxlgq01t5oq6f3ix79dsn: {
@@ -301,6 +301,84 @@ describe('Cart reducer', () => {
         const sellerId = 're_cjabsxlgq01t5oq6f3ix79dsn'
 
         expect(productExistsInCart(state, id, sellerId)).toEqual(false)
+      })
+    })
+    describe('getCartList', () => {
+      it('should return a array with sellers carts', () => {
+        const state = {
+          bySeller: {
+            re_cjabsxlgq01t5oq6f3ix79dsn: {
+              seller,
+              products: [
+                {
+                  id: 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5',
+                  name: 'Abominável',
+                  price: 80,
+                  image: 'https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg',
+                  description: 'description',
+                  category: 'action figures',
+                  seller,
+                },
+              ],
+            },
+          },
+        }
+
+        const expected = [{
+          seller,
+          products: [
+            {
+              id: 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5',
+              name: 'Abominável',
+              price: 80,
+              image: 'https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg',
+              description: 'description',
+              category: 'action figures',
+              seller,
+            },
+          ],
+        }]
+
+        expect(getCartList(state)).toEqual(expected)
+      })
+      describe('getCartBySeller', () => {
+        it('should return cart by seller with the given id', () => {
+          const state = {
+            bySeller: {
+              re_cjabsxlgq01t5oq6f3ix79dsn: {
+                seller,
+                products: [
+                  {
+                    id: 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5',
+                    name: 'Abominável',
+                    price: 80,
+                    image: 'https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg',
+                    description: 'description',
+                    category: 'action figures',
+                    seller,
+                  },
+                ],
+              },
+            },
+          }
+
+          const expected = {
+            seller,
+            products: [
+              {
+                id: 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5',
+                name: 'Abominável',
+                price: 80,
+                image: 'https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg',
+                description: 'description',
+                category: 'action figures',
+                seller,
+              },
+            ],
+          }
+          const sellerId = 're_cjabsxlgq01t5oq6f3ix79dsn'
+          expect(getCartBySeller(state, sellerId)).toEqual(expected)
+        })
       })
     })
   })
