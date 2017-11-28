@@ -1,6 +1,6 @@
-import { put, call } from 'redux-saga/effects'
+import { put, call, takeLatest } from 'redux-saga/effects'
 
-import { getProducts } from './sagas'
+import gallerySagas, { getProducts } from './sagas'
 import * as actions from './actions'
 import fetchProducts from './api'
 
@@ -31,6 +31,15 @@ describe('Gallery sagas', () => {
       ]
       output = generator.next({ data }).value
       expect(output).toEqual(put(actions.productsSuccess(data)))
+    })
+  })
+  describe('main sagas', () => {
+    const generator = gallerySagas()
+    let output
+
+    it('should takeLatest getProducts', () => {
+      output = generator.next().value
+      expect(output).toEqual(takeLatest(actions.getProducts, getProducts))
     })
   })
 })
