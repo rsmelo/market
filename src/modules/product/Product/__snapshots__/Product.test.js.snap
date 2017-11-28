@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product should render correctly 1`] = `
+<div
+  className={undefined}
+>
+  <div>
+    <Link
+      className=""
+      to="/"
+    >
+      Ver outros produtos
+    </Link>
+  </div>
+  <div
+    className={undefined}
+  >
+    <img
+      alt="Abominável (boneco colecionável)"
+      className={undefined}
+      src="https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg"
+    />
+  </div>
+  <div
+    className={undefined}
+  >
+    <h2
+      className={undefined}
+    >
+      Abominável (boneco colecionável)
+    </h2>
+    <span
+      className={undefined}
+    >
+      action figures
+    </span>
+    <p
+      className={undefined}
+    >
+      description
+    </p>
+    <div
+      className={undefined}
+    >
+      <span
+        className={undefined}
+      >
+        R$ 
+        80
+      </span>
+      <div
+        className={undefined}
+      >
+        <button
+          className=""
+          onClick={[Function]}
+          type="button"
+        >
+          Remover do carrinho
+        </button>
+        <Link
+          className=""
+          to="/cart"
+        >
+          ir para o carrinho
+        </Link>
+      </div>
+    </div>
+    <div
+      className={undefined}
+    >
+      vendido por 
+      <span
+        className={undefined}
+      >
+        João
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -14,12 +14,11 @@ class Product extends PureComponent {
   componentDidMount () {
     const {
       product,
-      match: { params: id },
+      match,
       getProduct,
     } = this.props
-
     if (!product) {
-      getProduct(id)
+      getProduct(match.params.id)
     }
   }
 
