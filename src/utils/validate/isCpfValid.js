@@ -11,6 +11,10 @@ const adjustReminderIfNeeded = remainder => (
 )
 
 const isCpfValid = (strCPF) => {
+  if (typeof strCPF !== 'string') {
+    throw new Error('strCPF must be a string')
+  }
+
   let sum = 0
   let remainder
   const cpfOnlyNums = strCPF.replace(/[^\d]/g, '')
