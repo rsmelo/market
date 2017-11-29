@@ -238,6 +238,43 @@ describe('Cart reducer', () => {
 
       expect(reducer(state, action)).toEqual(expected)
     })
+    it('should remove the seller cart from state when CART/REMOVE_CART', () => {
+      const seller = {
+        id: 're_cjabsxlgq01t5oq6f3ix79dsn',
+        name: 'João',
+      }
+      const state = {
+        bySeller: {
+          re_cjabsxlgq01t5oq6f3ix79dsn: {
+            seller,
+            products: [
+              {
+                id: 'dd5ca2b6-b8ae-4627-95f3-7d49613a0df5',
+                name: 'Abominável',
+                price: 80,
+                image: 'https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg',
+                description: 'description',
+                category: 'action figures',
+                seller,
+              },
+            ],
+          },
+        },
+      }
+
+      const expected = {
+        bySeller: {},
+      }
+
+      const sellerId = 're_cjabsxlgq01t5oq6f3ix79dsn'
+
+      const action = {
+        type: types.REMOVE_CART,
+        payload: sellerId,
+      }
+
+      expect(reducer(state, action)).toEqual(expected)
+    })
   })
   describe('selectors', () => {
     const seller = {

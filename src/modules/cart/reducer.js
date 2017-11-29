@@ -3,6 +3,7 @@ import { handleActions } from 'redux-actions'
 import {
   ADD_PRODUCT,
   REMOVE_PRODUCT,
+  REMOVE_CART,
 } from './types'
 import {
   loadFromStorage,
@@ -95,10 +96,22 @@ const removeProduct = (state, { payload }) => {
   return newState
 }
 
+const removeCart  = (state, { payload }) => {
+  const newState = Object.assign(
+    {},
+    state,
+    {
+      bySeller: removeSellerCart(state.bySeller, payload),
+    }
+  )
+  saveToStorage(CART, newState.bySeller)
+  return newState
+}
 
 const handler = {
   [ADD_PRODUCT]: addProduct,
   [REMOVE_PRODUCT]: removeProduct,
+  [REMOVE_CART]: removeCart,
 }
 
 const cart = handleActions(handler, initialState)

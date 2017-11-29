@@ -1,6 +1,7 @@
 import {
   addProduct,
   removeProduct,
+  removeCart,
 } from './actions'
 
 describe('Cart actions', () => {
@@ -37,5 +38,14 @@ describe('Cart actions', () => {
       },
     }
     expect(removeProduct(id, sellerId)).toEqual(expectedAction)
+  })
+  it('removeCart should create CART/REMOVE_CART action', () => {
+    const sellerId = 're_cjabsxlgq01t5oq6f3ix79dsn'
+
+    const expectedAction = {
+      type: 'CART/REMOVE_CART',
+      payload: sellerId,
+    }
+    expect(removeCart(sellerId)).toEqual(expectedAction)
   })
 })
