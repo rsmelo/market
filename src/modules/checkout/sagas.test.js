@@ -3,6 +3,7 @@ import { put, call, takeLatest } from 'redux-saga/effects'
 import checkoutSagas, { doPayment } from './sagas'
 import * as actions from './actions'
 import orderActions from '../order/actions'
+import { removeCart } from '../cart/actions'
 
 import {
   createPayment,
@@ -10,9 +11,13 @@ import {
 } from './api'
 
 describe('Gallery sagas', () => {
-  describe('getProducts saga', () => {
+  describe('doPayment saga', () => {
     const data = {}
-    const cart = {}
+    const cart = {
+      seller: {
+        id: 1,
+      },
+    }
     const push = jest.fn()
     const payload = {
       cart,
@@ -45,7 +50,11 @@ describe('Gallery sagas', () => {
       output = generator.next().value
       expect(output).toEqual(put(actions.paymentSuccess(transaction)))
     })
-    it('should call getPayables', () => {
+    it('should put removeCart', () => {
+      output = generator.next().value
+      expect(output).toEqual(put(removeCart(cart.seller.id)))
+    })
+    it('should call push', () => {
       output = generator.next(transaction).value
       expect(output).toEqual(call(push, `/order/${transaction.id}`))
     })
