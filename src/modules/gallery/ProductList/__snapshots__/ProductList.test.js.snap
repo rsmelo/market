@@ -1,72 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ProductList should render correctly 1`] = `
-<ul
+<div
   className={undefined}
 >
-  <li
+  <ul
     className={undefined}
   >
-    <Link
-      to="/product/a12090"
-    >
-      <img
-        alt="a product"
-        className={undefined}
-        src="image-url"
-      />
-    </Link>
-    <div
+    <li
       className={undefined}
     >
       <Link
         to="/product/a12090"
       >
-        <h2
+        <img
+          alt="a product"
           className={undefined}
-        >
-          a product
-        </h2>
-        <span
-          className={undefined}
-        >
-          R$ 
-          10
-        </span>
+          src="image-url"
+        />
       </Link>
-    </div>
-  </li>
-  <li
-    className={undefined}
-  >
-    <Link
-      to="/product/a120902"
-    >
-      <img
-        alt="a product2"
+      <div
         className={undefined}
-        src="image-url2"
-      />
-    </Link>
-    <div
+      >
+        <Link
+          to="/product/a12090"
+        >
+          <h2
+            className={undefined}
+          >
+            a product
+          </h2>
+          <span
+            className={undefined}
+          >
+            R$ 
+            10
+          </span>
+        </Link>
+      </div>
+    </li>
+    <li
       className={undefined}
     >
       <Link
         to="/product/a120902"
       >
-        <h2
+        <img
+          alt="a product2"
           className={undefined}
-        >
-          a product2
-        </h2>
-        <span
-          className={undefined}
-        >
-          R$ 
-          10
-        </span>
+          src="image-url2"
+        />
       </Link>
-    </div>
-  </li>
-</ul>
+      <div
+        className={undefined}
+      >
+        <Link
+          to="/product/a120902"
+        >
+          <h2
+            className={undefined}
+          >
+            a product2
+          </h2>
+          <span
+            className={undefined}
+          >
+            R$ 
+            10
+          </span>
+        </Link>
+      </div>
+    </li>
+  </ul>
+  <div
+    className={undefined}
+  >
+    <span
+      className={undefined}
+    >
+      Loading...
+    </span>
+  </div>
+</div>
 `;

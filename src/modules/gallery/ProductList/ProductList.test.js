@@ -26,15 +26,20 @@ describe('ProductList', () => {
         description: 'test',
       },
     ]
+    const props = {
+      products,
+      getProducts,
+      isFetching: true,
+    }
 
     const tree = renderer
-      .create(<ProductList getProducts={getProducts} products={products} />)
+      .create(<ProductList {...props} />)
       .toJSON()
     expect(tree).toMatchSnapshot()
   })
   it('should call getProducts when mount', () => {
     const getProducts = jest.fn()
-    shallow(<ProductList getProducts={getProducts} />)
+    shallow(<ProductList getProducts={getProducts} isFetching={false} />)
     expect(getProducts).toHaveBeenCalled()
   })
 
@@ -57,7 +62,13 @@ describe('ProductList', () => {
       },
     ]
 
-    const component = shallow(<ProductList getProducts={getProducts} products={products} />)
+    const props = {
+      getProducts,
+      products,
+      isFetching: false,
+    }
+
+    const component = shallow(<ProductList {...props} />)
     const productsComponents = component.find(Product)
     expect(productsComponents).toHaveLength(2)
   })

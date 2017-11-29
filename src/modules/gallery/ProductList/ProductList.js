@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
+import Loader from '../../../components/Loader'
 import Product from './Product'
-import styles from './ProductList.style.css'
+import style from './ProductList.style.css'
 
 class ProductList extends PureComponent {
   constructor (props) {
@@ -22,10 +23,14 @@ class ProductList extends PureComponent {
   }
 
   render () {
+    const { isFetching } = this.props
     return (
-      <ul className={styles.productList}>
-        {this.renderProducts()}
-      </ul>
+      <div className={style.container}>
+        <ul className={style.productList}>
+          {this.renderProducts()}
+        </ul>
+        {isFetching && <Loader />}
+      </div>
     )
   }
 }
@@ -41,6 +46,7 @@ ProductList.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   })),
+  isFetching: PropTypes.bool.isRequired,
   getProducts: PropTypes.func.isRequired,
 }
 
