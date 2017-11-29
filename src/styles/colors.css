@@ -1,6 +1,10 @@
 :root {
   --color-error: #c0392b;
+  --color-error-ligth: #f5c6cb;
+  --color-error-ligther: #f8d7da;
   --color-success: #27ae60;
+  --color-success-light: #c3e6cb;
+  --color-success-lighter: #d4edda;
   --color-dark-grey: #333333;
   --color-ligth-grey: #7d7a77;
   --color-ligther-grey: #a19b96;
