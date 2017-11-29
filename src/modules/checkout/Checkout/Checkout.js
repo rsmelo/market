@@ -7,6 +7,7 @@ import AddressForm from './AddressForm'
 import PaymentForm from './PaymentForm'
 import validate from './validate'
 import Button from '../../../components/Button'
+import FormNotification from '../../../components/FormNotification'
 import style from './style.css'
 
 const Checkout = ({
@@ -29,6 +30,13 @@ const Checkout = ({
         <PaymentForm />
       </div>
       <div>
+        {error &&
+          <FormNotification type="error">
+            {error}
+          </FormNotification>
+        }
+      </div>
+      <div>
         <Button
           type="submit"
           disabled={pristine || submitting}
@@ -36,7 +44,6 @@ const Checkout = ({
           Finalizar compra
         </Button>
       </div>
-      {error}
     </form>
   </div>
 )
