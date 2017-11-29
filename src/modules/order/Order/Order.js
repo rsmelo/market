@@ -1,29 +1,48 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
+import Payable from './Payble'
 
-const Order = ({ order }) => (
-  order && (
-    <div>
-      Valor: {order.amount}
+
+class Order extends PureComponent {
+  constructor (props) {
+    super(props)
+    this.renderPayables = this.renderPayables.bind(this)
+  }
+
+  renderPayables () {
+    const { payables } = this.props.order
+    return payables.map(payable => <Payable {...payable} />)
+  }
+
+  render () {
+    const { order } = this.props
+    return (
       <div>
-        <Link to="/">Voltar a loja</Link>
+        <div>
+          <h2>Detalhes da transação</h2>
+          Valor: {order.amount}
+          <div>
+            {this.renderPayables()}
+          </div>
+        </div>
+        <div>
+          <Link to="/">Voltar a loja</Link>
+        </div>
       </div>
-    </div>
-  )
-)
+    )
+  }
+}
 
 Order.defaultProps = {
   order: null,
 }
 
 Order.propTypes = {
-  order: PropTypes.shape({}),
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-  }).isRequired,
+  order: PropTypes.shape({
+    amount: PropTypes.number.isRequired,
+    payables: PropTypes.array(PropTypes.shape()).isRequired,
+  }),
 }
 export default Order
