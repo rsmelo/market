@@ -2,7 +2,43 @@
 
 exports[`Order renders correctly 1`] = `
 <div>
-  Valor: 
+  <div>
+    <h2>
+      Detalhes da transação
+    </h2>
+    Valor: 
+    100
+    <div>
+      <div>
+        <ul>
+          <li>
+            id do recebedor: $
+            re_cj2wd5u2600fecw6eytgcbkd0
+          </li>
+          <li>
+            Valor: R$: $
+            24000
+          </li>
+          <li>
+            Taxas: R$: $
+            6000
+          </li>
+          <li>
+            Status: $
+            waiting_funds
+          </li>
+          <li>
+            Data da criação : $
+            2017-06-29T18:16:49.411Z
+          </li>
+          <li>
+            Data do pagamento : $
+            2017-08-01T03:00:00.000
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <div>
     <Link
       to="/"

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-import Payable from './Payble'
+import Payable from './Payable'
 
 
 class Order extends PureComponent {
@@ -13,7 +13,7 @@ class Order extends PureComponent {
 
   renderPayables () {
     const { payables } = this.props.order
-    return payables.map(payable => <Payable {...payable} />)
+    return payables.map(payable => <Payable {...payable} key={payable.id} />)
   }
 
   render () {
@@ -42,7 +42,7 @@ Order.defaultProps = {
 Order.propTypes = {
   order: PropTypes.shape({
     amount: PropTypes.number.isRequired,
-    payables: PropTypes.array(PropTypes.shape()).isRequired,
+    payables: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   }),
 }
 export default Order

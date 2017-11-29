@@ -8,7 +8,18 @@ jest.mock('react-router-dom', () => ({ Link: 'Link' }))
 describe('Order', () => {
   it('renders correctly', () => {
     const props = {
-      order: {},
+      order: {
+        amount: 100,
+        payables: [{
+          id: '123',
+          status: 'waiting_funds',
+          amount: 24000,
+          fee: 6000,
+          recipientId: 're_cj2wd5u2600fecw6eytgcbkd0',
+          paymentDate: '2017-08-01T03:00:00.000',
+          dateCreated: '2017-06-29T18:16:49.411Z',
+        }],
+      },
       match: {
         params: {
           id: '123',
