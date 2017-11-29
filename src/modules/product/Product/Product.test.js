@@ -45,16 +45,21 @@ describe('Product', () => {
       },
     }
     const addedToCart = true
+    const newProps = {
+      isFetching: true,
+      addedToCart,
+      product,
+    }
 
     const tree = renderer
-      .create(<Product {...props} addedToCart={addedToCart} product={product} />)
+      .create(<Product {...props} {...newProps} />)
       .toJSON()
     expect(tree).toMatchSnapshot()
   })
 
   it('should call getProducts with match:parms:id when mount', () => {
     const addedToCart = false
-    shallow(<Product {...props} addedToCart={addedToCart} />)
+    shallow(<Product {...props} addedToCart={addedToCart} isFetching />)
     expect(getProduct).toHaveBeenCalledWith('123')
   })
   it('should render button with color green when addedToCart is false', () => {
@@ -71,7 +76,12 @@ describe('Product', () => {
         name: 'João',
       },
     }
-    const component = shallow(<Product product={product} {...props} addedToCart={addedToCart} />)
+    const newProps = {
+      product,
+      addedToCart,
+      isFetching: false,
+    }
+    const component = shallow(<Product {...props} {...newProps} />)
     const button = component.find(Button)
     expect(button.prop('color')).toBe('green')
   })
@@ -89,7 +99,12 @@ describe('Product', () => {
         name: 'João',
       },
     }
-    const component = shallow(<Product product={product} {...props} addedToCart={addedToCart} />)
+    const newProps = {
+      product,
+      addedToCart,
+      isFetching: false,
+    }
+    const component = shallow(<Product {...props} {...newProps} />)
     component.find(Button).simulate('click')
     expect(addProduct).toHaveBeenCalled()
   })
@@ -107,7 +122,12 @@ describe('Product', () => {
         name: 'João',
       },
     }
-    const component = shallow(<Product product={product} {...props} addedToCart={addedToCart} />)
+    const newProps = {
+      product,
+      addedToCart,
+      isFetching: false,
+    }
+    const component = shallow(<Product {...props} {...newProps} />)
     const button = component.find(Button)
     expect(button.prop('color')).toBe('grey')
   })
@@ -125,7 +145,12 @@ describe('Product', () => {
         name: 'João',
       },
     }
-    const component = shallow(<Product product={product} {...props} addedToCart={addedToCart} />)
+    const newProps = {
+      product,
+      addedToCart,
+      isFetching: false,
+    }
+    const component = shallow(<Product {...props} {...newProps} />)
     component.find(Button).simulate('click')
     expect(removeProduct).toHaveBeenCalled()
   })

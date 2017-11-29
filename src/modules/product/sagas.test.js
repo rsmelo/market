@@ -17,7 +17,7 @@ describe('Gallery sagas', () => {
 
     it('should call fetchProduct', () => {
       output = generator.next(payload).value
-      expect(output).toEqual(call(fetchProduct, payload.id))
+      expect(output).toEqual(call(fetchProduct, payload))
     })
 
     it('should put productSuccess with data', () => {

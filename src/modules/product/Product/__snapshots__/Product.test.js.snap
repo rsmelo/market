@@ -4,6 +4,15 @@ exports[`Product should render correctly 1`] = `
 <div
   className={undefined}
 >
+  <div
+    className={undefined}
+  >
+    <span
+      className={undefined}
+    >
+      Loading...
+    </span>
+  </div>
   <div>
     <Link
       className=""

@@ -9,7 +9,7 @@ const fetchProduct = id => new Promise((resolve) => {
       data: product,
     }
     resolve(response)
-  }, 100)
+  }, 500)
 })
 
 export default fetchProduct
