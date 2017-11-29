@@ -96,7 +96,7 @@ const removeProduct = (state, { payload }) => {
   return newState
 }
 
-const removeCart  = (state, { payload }) => {
+const removeCart = (state, { payload }) => {
   const newState = Object.assign(
     {},
     state,
