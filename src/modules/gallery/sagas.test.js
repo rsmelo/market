@@ -1,3 +1,4 @@
+import sagaHelper from 'redux-saga-testing'
 import { put, call, takeLatest } from 'redux-saga/effects'
 
 import gallerySagas, { getProducts } from './sagas'
@@ -6,15 +7,7 @@ import fetchProducts from './api'
 
 describe('Gallery sagas', () => {
   describe('getProducts saga', () => {
-    const generator = getProducts()
-    let output
-
-    it('should call fetchProducts', () => {
-      output = generator.next().value
-      expect(output).toEqual(call(fetchProducts))
-    })
-
-    it('should put productsSuccess with data', () => {
+    describe('Scenario 1: When runs ok', () => {
       const data = [
         {
           id: 'a12090',
@@ -24,8 +17,32 @@ describe('Gallery sagas', () => {
           description: 'test',
         },
       ]
-      output = generator.next({ data }).value
-      expect(output).toEqual(put(actions.productsSuccess(data)))
+      const it = sagaHelper(getProducts())
+
+      it('should call fetchProducts', (result) => {
+        expect(result).toEqual(call(fetchProducts))
+        return { data }
+      })
+      it('should put productsSuccess with data', () => {
+        expect(put(actions.productsSuccess(data)))
+      })
+      it('and then nothing', (result) => {
+        expect(result).toBeUndefined()
+      })
+    })
+    describe('Scenario 2: When throws exception', () => {
+      const it = sagaHelper(getProducts())
+
+      it('should call fetchProducts', (result) => {
+        expect(result).toEqual(call(fetchProducts))
+        return new Error('Something went wrong')
+      })
+      it('should call productsFailure', (result) => {
+        expect(result).toEqual(put(actions.productsFailure('Something went wrong')))
+      })
+      it('and then nothing', (result) => {
+        expect(result).toBeUndefined()
+      })
     })
   })
   describe('main sagas', () => {

@@ -8,7 +8,7 @@ export function* getProducts () {
     const { data } = yield call(fetchProducts)
     yield put(actions.productsSuccess(data))
   } catch (error) {
-    yield put(actions.productsFailure(new Error(error.message)))
+    yield put(actions.productsFailure(error.message))
   }
 }
 
