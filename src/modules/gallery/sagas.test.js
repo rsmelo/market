@@ -9,11 +9,6 @@ describe('Gallery sagas', () => {
     const generator = getProducts()
     let output
 
-    it('should put productsRequest', () => {
-      output = generator.next().value
-      expect(output).toEqual(put(actions.productsRequest()))
-    })
-
     it('should call fetchProducts', () => {
       output = generator.next().value
       expect(output).toEqual(call(fetchProducts))

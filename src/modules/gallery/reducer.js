@@ -1,7 +1,7 @@
 import { handleActions, combineActions } from 'redux-actions'
 
 import {
-  PRODUCTS_REQUEST,
+  GET_PRODUCTS,
   PRODUCTS_SUCCESS,
   PRODUCTS_FAILURE,
 } from './types'
@@ -58,7 +58,7 @@ const productSuccess = (state, { payload }) => {
 const handler = {
   [PRODUCTS_SUCCESS]: productsSuccess,
   [PRODUCT_SUCCESS]: productSuccess,
-  [combineActions(PRODUCTS_REQUEST, PRODUCT_REQUEST)]: setIsFetching(true),
+  [combineActions(GET_PRODUCTS, PRODUCT_REQUEST)]: setIsFetching(true),
   [combineActions(PRODUCTS_FAILURE, PRODUCT_FAILURE)]: setIsFetching(false),
 }
 

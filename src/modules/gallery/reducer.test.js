@@ -12,7 +12,7 @@ describe('Gallery reducer', () => {
       expect(reducer(undefined, {})).toEqual(initialState)
     })
 
-    it('should return isFetching true on GALLERY/PRODUCTS_REQUEST', () => {
+    it('should return isFetching true on GALLERY/GET_PRODUCTS', () => {
       const state = {
         products: [],
         isFetching: false,
@@ -22,7 +22,7 @@ describe('Gallery reducer', () => {
         products: [],
       }
       const action = {
-        type: types.PRODUCTS_REQUEST,
+        type: types.GET_PRODUCTS,
       }
 
       expect(reducer(state, action)).toEqual(expected)

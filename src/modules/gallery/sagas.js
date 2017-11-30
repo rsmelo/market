@@ -5,7 +5,6 @@ import fetchProducts from './api'
 
 export function* getProducts () {
   try {
-    yield put(actions.productsRequest())
     const { data } = yield call(fetchProducts)
     yield put(actions.productsSuccess(data))
   } catch (error) {
