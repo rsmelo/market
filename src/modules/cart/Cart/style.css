@@ -5,7 +5,7 @@
 }
 
 .container {
-  margin: 4em;
+  padding: 1em 0;
   flex-basis: 1170px;
 }
 
