@@ -28,11 +28,6 @@ describe('Checkout sagas', () => {
     const transaction = { id: 1, amount: 100, status: 'paid' }
     let output
 
-    it('should put paymentRequest', () => {
-      output = generator.next().value
-      expect(output).toEqual(put(actions.paymentRequest()))
-    })
-
     it('should call createPayment', () => {
       output = generator.next().value
       expect(output).toEqual(call(createPayment, { data, cart }))
@@ -46,10 +41,6 @@ describe('Checkout sagas', () => {
       output = generator.next(payables).value
       const parsedTransaction = { id: 1, amount: 1, status: 'paid' }
       expect(output).toEqual(put(orderActions.addOrder({ ...parsedTransaction, payables })))
-    })
-    it('should put paymentSuccess', () => {
-      output = generator.next().value
-      expect(output).toEqual(put(actions.paymentSuccess({ id: 1, amount: 1, status: 'paid' })))
     })
     it('should put removeCart', () => {
       output = generator.next().value

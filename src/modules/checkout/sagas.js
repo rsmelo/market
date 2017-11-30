@@ -35,13 +35,11 @@ const parseTranscation = ({ id, amount, status }) => ({
 export function* doPayment ({ payload }) {
   try {
     const { data, cart, push } = payload
-    yield put(actions.paymentRequest())
     const responseTransaction = yield call(createPayment, { data, cart })
     const transaction = parseTranscation(responseTransaction)
     const responsePayables = yield call(getPayables, transaction.id)
     const payables = parsePayables(responsePayables)
     yield put(orderActions.addOrder({ ...transaction, payables }))
-    yield put(actions.paymentSuccess(transaction))
     yield put(removeCart(cart.seller.id))
     yield call(push, `/order/${transaction.id}`)
   } catch (error) {
