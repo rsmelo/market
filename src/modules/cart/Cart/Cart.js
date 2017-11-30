@@ -15,7 +15,7 @@ class Cart extends PureComponent {
     const { carts, removeProduct } = this.props
     return carts.map(({ seller, products }) => (
       <div key={seller.id}>
-        <h2 className={style.seller}>Vendido por {seller.name}</h2>
+        <h4 className={style.seller}>Vendido por {seller.name}</h4>
         <ProductList
           products={products}
           removeProduct={removeProduct}

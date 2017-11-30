@@ -12,6 +12,7 @@
   color: var(--color-ligth-grey);
   margin: 0.5em 0;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .submitButtonContainer,
