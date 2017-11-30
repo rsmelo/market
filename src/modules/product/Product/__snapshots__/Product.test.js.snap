@@ -33,11 +33,11 @@ exports[`Product should render correctly 1`] = `
   <div
     className={undefined}
   >
-    <h2
+    <h4
       className={undefined}
     >
       Abominável (boneco colecionável)
-    </h2>
+    </h4>
     <span
       className={undefined}
     >

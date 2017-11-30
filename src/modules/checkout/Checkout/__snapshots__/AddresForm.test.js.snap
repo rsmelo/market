@@ -4,10 +4,13 @@ exports[`AddressForm renders correctly 1`] = `
 <div
   className={undefined}
 >
-  <h2>
+  <h2
+    className={undefined}
+  >
     2. Endereço
   </h2>
   <label
+    className={undefined}
     htmlFor="street"
   >
     Rua
@@ -19,6 +22,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="streetNumber"
   >
     Número
@@ -30,6 +34,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="complementary"
   >
     Complemento
@@ -41,6 +46,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="neighborhood"
   >
     Bairro
@@ -52,6 +58,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="city"
   >
     Cidade
@@ -63,6 +70,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="state"
   >
     Estado
@@ -74,6 +82,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="zipcode"
   >
     CEP

@@ -1,31 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Order renders correctly 1`] = `
-<div>
+<div
+  className={undefined}
+>
   <ul>
     <li>
-      id do recebedor: $
+      ID do recebedor: 
       re_cj2wd5u2600fecw6eytgcbkd0
     </li>
     <li>
-      Valor: R$: $
-      24000
+      Valor: 
+      R$ 24,000.00
     </li>
     <li>
-      Taxas: R$: $
-      6000
+      Taxas: 
+      R$ 6,000.00
     </li>
     <li>
-      Status: $
-      waiting_funds
+      Status: 
+      aguardando fundos
     </li>
     <li>
-      Data da criação : $
-      2017-06-29T18:16:49.411Z
+      Data da criação: 
+      29/06/2017
     </li>
     <li>
-      Data do pagamento : $
-      2017-08-01T03:00:00.000
+      Data do pagamento: 
+      01/08/2017
     </li>
   </ul>
 </div>

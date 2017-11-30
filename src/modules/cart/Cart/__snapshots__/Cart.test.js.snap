@@ -18,12 +18,12 @@ exports[`Cart should render correctly 1`] = `
       </Link>
     </div>
     <div>
-      <h2
+      <h4
         className={undefined}
       >
         Vendido por 
         João
-      </h2>
+      </h4>
       <table
         className={undefined}
       >

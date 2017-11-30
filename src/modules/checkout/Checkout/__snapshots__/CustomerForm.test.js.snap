@@ -4,10 +4,13 @@ exports[`AddressForm renders correctly 1`] = `
 <div
   className={undefined}
 >
-  <h2>
+  <h2
+    className={undefined}
+  >
     1. Dados Pessoais
   </h2>
   <label
+    className={undefined}
     htmlFor="name"
   >
     Nome
@@ -19,6 +22,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="email"
   >
     E-mail
@@ -30,6 +34,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="personCode"
   >
     CPF
@@ -43,6 +48,7 @@ exports[`AddressForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="phone"
   >
     Telefone

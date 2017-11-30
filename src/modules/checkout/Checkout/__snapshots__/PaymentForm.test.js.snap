@@ -4,10 +4,13 @@ exports[`PaymentForm renders correctly 1`] = `
 <div
   className={undefined}
 >
-  <h2>
+  <h2
+    className={undefined}
+  >
     3. Pagamento
   </h2>
   <label
+    className={undefined}
     htmlFor="cardNumber"
   >
     Número do cartão
@@ -21,6 +24,7 @@ exports[`PaymentForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="cardHolderName"
   >
     Nome do titular
@@ -32,6 +36,7 @@ exports[`PaymentForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="cardExpirationDate"
   >
     Expira em
@@ -45,6 +50,7 @@ exports[`PaymentForm renders correctly 1`] = `
     type="input"
   />
   <label
+    className={undefined}
     htmlFor="cardCvv"
   >
     Código de segurança
