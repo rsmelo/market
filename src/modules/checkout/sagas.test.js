@@ -10,7 +10,7 @@ import {
   getPayables,
 } from './api'
 
-describe('Gallery sagas', () => {
+describe('Checkout sagas', () => {
   describe('doPayment saga', () => {
     const data = {}
     const cart = {
@@ -25,7 +25,7 @@ describe('Gallery sagas', () => {
       push,
     }
     const generator = doPayment({ payload })
-    const transaction = { id: 1 }
+    const transaction = { id: 1, amount: 100, status: 'paid' }
     let output
 
     it('should put paymentRequest', () => {
@@ -44,11 +44,12 @@ describe('Gallery sagas', () => {
     it('should put addOrder', () => {
       const payables = []
       output = generator.next(payables).value
-      expect(output).toEqual(put(orderActions.addOrder({ ...transaction, payables })))
+      const parsedTransaction = { id: 1, amount: 1, status: 'paid' }
+      expect(output).toEqual(put(orderActions.addOrder({ ...parsedTransaction, payables })))
     })
     it('should put paymentSuccess', () => {
       output = generator.next().value
-      expect(output).toEqual(put(actions.paymentSuccess(transaction)))
+      expect(output).toEqual(put(actions.paymentSuccess({ id: 1, amount: 1, status: 'paid' })))
     })
     it('should put removeCart', () => {
       output = generator.next().value
