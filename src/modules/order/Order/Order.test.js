@@ -10,6 +10,8 @@ describe('Order', () => {
     const props = {
       order: {
         amount: 100,
+        id: 123,
+        status: 'paid',
         payables: [{
           id: '123',
           status: 'waiting_funds',

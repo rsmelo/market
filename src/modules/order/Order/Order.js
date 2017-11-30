@@ -74,7 +74,15 @@ Order.propTypes = {
   order: PropTypes.shape({
     id: PropTypes.number.isRequired,
     amount: PropTypes.number.isRequired,
-    payables: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    status: PropTypes.string.isRequired,
+    payables: PropTypes.arrayOf(PropTypes.shape({
+      status: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      fee: PropTypes.number.isRequired,
+      recipientId: PropTypes.string.isRequired,
+      paymentDate: PropTypes.string.isRequired,
+      dateCreated: PropTypes.string.isRequired,
+    })).isRequired,
   }),
 }
 export default Order

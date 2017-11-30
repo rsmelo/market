@@ -1,50 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Order renders correctly 1`] = `
-<div>
-  <div>
-    <h2>
-      Detalhes da transação
+<div
+  className={undefined}
+>
+  <div
+    className={undefined}
+  >
+    <h2
+      className={undefined}
+    >
+      Detalhes do pedido
     </h2>
-    Valor: 
-    100
+    <ul
+      className={undefined}
+    >
+      <li>
+        Transação: 
+        123
+      </li>
+      <li>
+        Status: 
+        pago
+      </li>
+      <li>
+        Valor: 
+        R$ 100.00
+      </li>
+    </ul>
     <div>
-      <div>
-        <ul>
-          <li>
-            id do recebedor: $
-            re_cj2wd5u2600fecw6eytgcbkd0
-          </li>
-          <li>
-            Valor: R$: $
-            24000
-          </li>
-          <li>
-            Taxas: R$: $
-            6000
-          </li>
-          <li>
-            Status: $
-            waiting_funds
-          </li>
-          <li>
-            Data da criação : $
-            2017-06-29T18:16:49.411Z
-          </li>
-          <li>
-            Data do pagamento : $
-            2017-08-01T03:00:00.000
-          </li>
-        </ul>
+      <h4
+        className={undefined}
+      >
+        Recebíveis 
+      </h4>
+      <div
+        className={undefined}
+      >
+        <div
+          className={undefined}
+        >
+          <ul>
+            <li>
+              ID do recebedor: 
+              re_cj2wd5u2600fecw6eytgcbkd0
+            </li>
+            <li>
+              Valor: 
+              R$ 24,000.00
+            </li>
+            <li>
+              Taxas: 
+              R$ 6,000.00
+            </li>
+            <li>
+              Status: 
+              aguardando fundos
+            </li>
+            <li>
+              Data da criação: 
+              29/06/2017
+            </li>
+            <li>
+              Data do pagamento: 
+              01/08/2017
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div>
-    <Link
-      to="/"
+    <div
+      className={undefined}
     >
-      Voltar a loja
-    </Link>
+      <Link
+        className=""
+        to="/"
+      >
+        Voltar a loja
+      </Link>
+    </div>
   </div>
 </div>
 `;
