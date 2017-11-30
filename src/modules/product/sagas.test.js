@@ -10,11 +10,6 @@ describe('Gallery sagas', () => {
     const generator = getProduct({ payload })
     let output
 
-    it('should put productRequest', () => {
-      output = generator.next().value
-      expect(output).toEqual(put(actions.productRequest()))
-    })
-
     it('should call fetchProduct', () => {
       output = generator.next(payload).value
       expect(output).toEqual(call(fetchProduct, payload))

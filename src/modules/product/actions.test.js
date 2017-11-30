@@ -1,6 +1,5 @@
 import {
   getProduct,
-  productRequest,
   productSuccess,
   productFailure,
 } from './actions'
@@ -11,13 +10,6 @@ describe('Product actions', () => {
       type: 'PRODUCT/GET_PRODUCT',
     }
     expect(getProduct()).toEqual(expectedAction)
-  })
-
-  it('productRequest should create PRODUCT/PRODUCT_REQUEST action', () => {
-    const expectedAction = {
-      type: 'PRODUCT/PRODUCT_REQUEST',
-    }
-    expect(productRequest()).toEqual(expectedAction)
   })
 
   it('productSuccess should create PRODUCT/PRODUCT_SUCCESS action', () => {
