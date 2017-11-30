@@ -1,13 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Root should render correctly 1`] = `
-<div>
-  <Provider
-    store={Object {}}
+<Provider
+  store={Object {}}
+>
+  <div
+    className={undefined}
   >
-    <div>
-      router
+    <div
+      className={undefined}
+    >
+      <a
+        className=""
+        href="/cart"
+        onClick={[Function]}
+      >
+        Carrinho
+      </a>
     </div>
-  </Provider>
-</div>
+    router
+  </div>
+</Provider>
 `;
