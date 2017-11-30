@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 
+import style from './style.css'
 import Payable from './Payable'
+import ButtonLink from '../../../components/ButtonLink'
 
 
 class Order extends PureComponent {
@@ -19,16 +20,28 @@ class Order extends PureComponent {
   render () {
     const { order } = this.props
     return (
-      <div>
-        <div>
-          <h2>Detalhes da transação</h2>
-          Valor: {order.amount}
+      <div className={style.container}>
+        <div className={style.content} >
+          <h2 className={style.title}>Detalhes do pedido</h2>
+          <ul className={style.transaction}>
+            <li>
+              Transação: {order.id}
+            </li>
+            <li>
+              Valor: {order.amount}
+            </li>
+          </ul>
           <div>
-            {this.renderPayables()}
+            <h4 className={style.payablesTitle}>Recebíveis </h4>
+            <div className={style.payablesContainer}>
+              {this.renderPayables()}
+            </div>
           </div>
-        </div>
-        <div>
-          <Link to="/">Voltar a loja</Link>
+          <div className={style.buttonContainer}>
+            <ButtonLink to="/">
+              Voltar a loja
+            </ButtonLink>
+          </div>
         </div>
       </div>
     )
@@ -41,6 +54,7 @@ Order.defaultProps = {
 
 Order.propTypes = {
   order: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     amount: PropTypes.number.isRequired,
     payables: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   }),

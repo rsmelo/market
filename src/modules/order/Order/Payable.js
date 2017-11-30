@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import style from './Payable.style.css'
+
 const Payable = ({
   status,
   amount,
@@ -9,25 +11,25 @@ const Payable = ({
   paymentDate,
   dateCreated,
 }) => (
-  <div>
+  <div className={style.payable}>
     <ul>
       <li>
-        id do recebedor: ${recipientId}
+        ID do recebedor: {recipientId}
       </li>
       <li>
-        Valor: R$: ${amount}
+        Valor: R${amount}
       </li>
       <li>
-        Taxas: R$: ${fee}
+        Taxas: R${fee}
       </li>
       <li>
-        Status: ${status}
+        Status: {status}
       </li>
       <li>
-        Data da criação : ${dateCreated}
+        Data da criação: {dateCreated}
       </li>
       <li>
-        Data do pagamento : ${paymentDate}
+        Data do pagamento: {paymentDate}
       </li>
     </ul>
   </div>
