@@ -12,8 +12,15 @@ const InputField = ({
   meta: { touched, error },
   ...props
 }) => (
-  <div className={style.input}>
-    <input {...input} type={type} id={id} placeholder={placeholder} {...props} />
+  <div className={style.container}>
+    <input
+      {...input}
+      {...props}
+      type={type}
+      id={id}
+      placeholder={placeholder}
+      className={style.input}
+    />
     {touched &&
       (error && <FieldNotification type="error" >{error}</FieldNotification>)}
   </div>
