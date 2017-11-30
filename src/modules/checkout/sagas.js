@@ -1,7 +1,7 @@
 import { takeLatest, put, call } from 'redux-saga/effects'
 import { stopSubmit } from 'redux-form'
 
-import * as actions from './actions'
+import actions from './actions'
 import orderActions from '../order/actions'
 import { removeCart } from '../cart/actions'
 
