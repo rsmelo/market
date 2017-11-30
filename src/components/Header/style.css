@@ -1,7 +1,29 @@
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 100%;
   padding: 1em 0;
+  background-color: var(--color-light-green);
+}
+
+.content {
+  display: flex;
+  width: 100%;
   max-width: 1170px;
+  justify-content: space-between;
+}
+
+.title {
+  color: var(--color-white);
+  font-size: 28px;
+  font-weight: lighter;
+}
+
+.cartIcon {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAABFUlEQVRIx2NgGM7gf8N/GFhALYN+/ZejjkH//0+m3IPO/0kHD/+rYTPqFBlGlWMzKJBkY/7818JmEOP/ayQaNAtXOMWRZMyX/xK4DGL5/4AEg+rxxV0O0cY8+8+NzyDO/y+JNCiVUHqqJMqYK/+ZCRnE//8DEQZ5EZPG2wgas4e4zOJAwJh//w2JM2gXAYOaiDPGHaz49/8WYKmACav+WxNnDNP/i2CDplFamEAy7qf/YpQaVAM26DlWb6FCB/wG+RGdRRrwG8T4fz1VDAIb5fu/lmKvUbOWs/9/AViEnvtvQ7osskK5/1/h5Z8MabKoSguRgjOfNFkaGSQLdPR/aOqWJk0WXbHN/7PANsCZ/1akyw5TAAC4GqRAeRYA+wAAAABJRU5ErkJggg==");
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background-color: transparent;
 }
