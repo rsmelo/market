@@ -40,7 +40,7 @@ class Product extends PureComponent {
         />
       </div>,
       <div className={style.info} key={2}>
-        <h2 className={style.name}>{product.name}</h2>
+        <h4 className={style.name}>{product.name}</h4>
         <span className={style.category}>{product.category}</span>
         <p className={style.description}>{product.description}</p>
         <div className={style.priceContainer}>
