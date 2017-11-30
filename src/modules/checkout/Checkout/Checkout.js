@@ -51,7 +51,7 @@ const Checkout = ({
 )
 
 Checkout.defaultProps = {
-  error: undefined,
+  error: null,
 }
 
 Checkout.propTypes = {
@@ -65,6 +65,8 @@ Checkout.propTypes = {
     push: PropTypes.func.isRequired,
   }).isRequired,
 }
+
+export { Checkout }
 
 export default reduxForm({
   form: 'checkout',
