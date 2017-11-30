@@ -1,11 +1,24 @@
 @import "./colors.css";
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-size: 14px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   padding: 0;
   color: #333333;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 300;
+  margin: 0;
 }
 
 ul {
