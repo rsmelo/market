@@ -27,7 +27,17 @@ const Checkout = ({
       <div className={style.formContainer}>
         <CustomerForm />
         <AddressForm />
-        <PaymentForm />
+        <div>
+          <PaymentForm />
+          <div className={style.buttonContainer}>
+            <Button
+              type="submit"
+              disabled={pristine || submitting}
+            >
+            Finalizar compra
+            </Button>
+          </div>
+        </div>
       </div>
       <div>
         {error &&
@@ -35,14 +45,6 @@ const Checkout = ({
             {error}
           </FormNotification>
         }
-      </div>
-      <div>
-        <Button
-          type="submit"
-          disabled={pristine || submitting}
-        >
-          Finalizar compra
-        </Button>
       </div>
     </form>
   </div>

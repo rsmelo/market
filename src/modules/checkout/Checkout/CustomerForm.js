@@ -12,22 +12,22 @@ const maskPhone = '(00) 0000-0000'
 
 const CustomerForm = () => (
   <div className={style.form}>
-    <h2>1. Dados Pessoais</h2>
-    <label htmlFor="name">Nome</label>
+    <h2 className={style.title}>1. Dados Pessoais</h2>
+    <label htmlFor="name" className={style.label}>Nome</label>
     <Field
       id="name"
       name="name"
       type="input"
       component={InputField}
     />
-    <label htmlFor="email">E-mail</label>
+    <label htmlFor="email" className={style.label}>E-mail</label>
     <Field
       id="email"
       name="email"
       type="input"
       component={InputField}
     />
-    <label htmlFor="personCode">CPF</label>
+    <label htmlFor="personCode" className={style.label}>CPF</label>
     <Field
       id="personCode"
       name="personCode"
@@ -36,7 +36,7 @@ const CustomerForm = () => (
       placeholder={maskCPF}
       component={InputField}
     />
-    <label htmlFor="phone">Telefone</label>
+    <label htmlFor="phone" className={style.label}>Telefone</label>
     <Field
       id="phone"
       name="phone"
