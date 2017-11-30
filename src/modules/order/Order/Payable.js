@@ -1,8 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import moment from 'moment'
 
+import formatCurrency from '../../../utils/formatCurrency'
 import style from './Payable.style.css'
 
+const statuses = {
+  paid: 'pago',
+  waiting_funds: 'aguardando fundos',
+}
 const Payable = ({
   status,
   amount,
@@ -17,19 +23,19 @@ const Payable = ({
         ID do recebedor: {recipientId}
       </li>
       <li>
-        Valor: R${amount}
+        Valor: {formatCurrency(amount)}
       </li>
       <li>
-        Taxas: R${fee}
+        Taxas: {formatCurrency(fee)}
       </li>
       <li>
-        Status: {status}
+        Status: {statuses[status]}
       </li>
       <li>
-        Data da criação: {dateCreated}
+        Data da criação: {moment(dateCreated).format('DD/MM/YYYY')}
       </li>
       <li>
-        Data do pagamento: {paymentDate}
+        Data do pagamento: {moment(paymentDate).format('DD/MM/YYYY')}
       </li>
     </ul>
   </div>

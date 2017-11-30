@@ -4,7 +4,17 @@ import PropTypes from 'prop-types'
 import style from './style.css'
 import Payable from './Payable'
 import ButtonLink from '../../../components/ButtonLink'
+import formatCurrency from '../../../utils/formatCurrency'
 
+const statuses = {
+  processing: 'processando',
+  authorized: 'autorizado',
+  paid: 'pago',
+  refunded: 'reembolsado',
+  waiting_payment: 'aguardando pagamento',
+  pending_refund: 'reembolso pendente',
+  refused: 'recusado',
+}
 
 class Order extends PureComponent {
   constructor (props) {
@@ -14,7 +24,17 @@ class Order extends PureComponent {
 
   renderPayables () {
     const { payables } = this.props.order
-    return payables.map(payable => <Payable {...payable} key={payable.id} />)
+    if (payables.length) {
+      return (
+        <div>
+          <h4 className={style.payablesTitle}>Recebíveis </h4>
+          <div className={style.payablesContainer}>
+            {payables.map(payable => <Payable {...payable} key={payable.id} />)}
+          </div>
+        </div>
+      )
+    }
+    return null
   }
 
   render () {
@@ -28,15 +48,13 @@ class Order extends PureComponent {
               Transação: {order.id}
             </li>
             <li>
-              Valor: {order.amount}
+              Status: {statuses[order.status]}
+            </li>
+            <li>
+              Valor: {formatCurrency(order.amount)}
             </li>
           </ul>
-          <div>
-            <h4 className={style.payablesTitle}>Recebíveis </h4>
-            <div className={style.payablesContainer}>
-              {this.renderPayables()}
-            </div>
-          </div>
+          {this.renderPayables()}
           <div className={style.buttonContainer}>
             <ButtonLink to="/">
               Voltar a loja
