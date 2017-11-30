@@ -32,7 +32,7 @@ class Cart extends PureComponent {
   render () {
     const { carts } = this.props
     return (
-      <div className={style.outsideBox}>
+      <div className={style.cart}>
         <div className={style.container}>
           <div className={style.backButtonContainer}>
             <ButtonLink to="/" appearance="outline">

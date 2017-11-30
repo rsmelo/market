@@ -1,6 +1,7 @@
-.outsideBox {
+.cart {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .container {
