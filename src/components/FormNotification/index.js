@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import style from './style.css'
 
 const FormNotification = ({ children, type }) => (
-  <div className={classNames(style.fieldNotification, style[type])}>
+  <div className={classNames(style.formNotification, style[type])}>
     {children}
   </div>
 )
