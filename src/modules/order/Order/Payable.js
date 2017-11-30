@@ -19,23 +19,23 @@ const Payable = ({
 }) => (
   <div className={style.payable}>
     <ul>
-      <li>
-        ID do recebedor: {recipientId}
+      <li className={style.item}>
+        ID do recebedor: <span className={style.value}>{recipientId}</span>
       </li>
-      <li>
-        Valor: {formatCurrency(amount)}
+      <li className={style.item}>
+        Valor: <span className={style.value}>{formatCurrency(amount)}</span>
       </li>
-      <li>
-        Taxas: {formatCurrency(fee)}
+      <li className={style.item}>
+        Taxas: <span className={style.value}>{formatCurrency(fee)}</span>
       </li>
-      <li>
-        Status: {statuses[status]}
+      <li className={style.item}>
+        Status: <span className={style.value}>{statuses[status]}</span>
       </li>
-      <li>
-        Data da criação: {moment(dateCreated).format('DD/MM/YYYY')}
+      <li className={style.item}>
+        Data da criação: <span className={style.value}>{moment(dateCreated).format('DD/MM/YYYY')}</span>
       </li>
-      <li>
-        Data do pagamento: {moment(paymentDate).format('DD/MM/YYYY')}
+      <li className={style.item}>
+        Data do pagamento: <span className={style.value}>{moment(paymentDate).format('DD/MM/YYYY')}</span>
       </li>
     </ul>
   </div>

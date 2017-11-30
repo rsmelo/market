@@ -44,14 +44,14 @@ class Order extends PureComponent {
         <div className={style.content} >
           <h2 className={style.title}>Detalhes do pedido</h2>
           <ul className={style.transaction}>
-            <li>
-              Transação: {order.id}
+            <li className={style.item}>
+              Transação: <span className={style.value}>{order.id}</span>
             </li>
-            <li>
-              Status: {statuses[order.status]}
+            <li className={style.item}>
+              Status: <span className={style.value}>{statuses[order.status]}</span>
             </li>
-            <li>
-              Valor: {formatCurrency(order.amount)}
+            <li className={style.item}>
+              Valor: <span className={style.value}>{formatCurrency(order.amount)}</span>
             </li>
           </ul>
           {this.renderPayables()}
