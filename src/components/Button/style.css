@@ -53,10 +53,18 @@
 
 .outline-grey {
   color: var(--color-ligther-grey);
-  border-color: var(--color-ligther-green);
+  border-color: var(--color-ligther-grey);
 }
 
 .outline-grey:hover {
   color: var(--color-ligth-grey);
-  border-color: var(--color-light-ligthgreen);
+  border-color: var(--color-ligth-grey);
+}
+
+.button:disabled:hover,
+.button:disabled {
+  background: var(--color-ligther-grey);
+  color: var(--color-ligth-grey);
+  border-color: var(--color-ligther-grey);
+  cursor: not-allowed;
 }

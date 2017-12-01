@@ -10,6 +10,7 @@ const Button = ({
   children,
   color,
   appearance,
+  disabled,
 }) => {
   const styles = classNames(
     style.button,
@@ -22,6 +23,7 @@ const Button = ({
       className={styles}
       onClick={onClick}
       type={type}
+      disabled={disabled}
     >
       {children}
     </button>
@@ -34,11 +36,13 @@ Button.defaultProps = {
   appearance: 'flat',
   color: 'green',
   type: 'button',
+  disabled: false,
 }
 
 Button.propTypes = {
   type: PropTypes.oneOf(['submit', 'reset', 'button']),
   onClick: PropTypes.func,
+  disabled: PropTypes.bool,
   appearance: PropTypes.oneOf([
     'flat', 'outline',
   ]),
