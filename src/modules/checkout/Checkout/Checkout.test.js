@@ -103,4 +103,23 @@ describe('Checkout', () => {
     form.simulate('submit')
     expect(handleSubmit).toHaveBeenCalled()
   })
+  it('should show the message "O carrinho associado a este pedido não foi localizado" when cart is no set', () => {
+    jest.mock('redux-form', () => ({ Field: 'Field' }))
+    const push = jest.fn()
+    const onSubmit = jest.fn()
+    const handleSubmit = jest.fn()
+    const props = {
+      cart: null,
+      handleSubmit,
+      onSubmit,
+      submitting: false,
+      pristine: false,
+      history: {
+        push,
+      },
+    }
+    const component = shallow(<Checkout {...props} />)
+    const paragraph = component.find('p')
+    expect(paragraph.text()).toBe('O carrinho associado a este pedido não foi localizado')
+  })
 })
