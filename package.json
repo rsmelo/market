@@ -1,7 +1,6 @@
 {
   "name": "market",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
@@ -150,5 +149,21 @@
   },
   "stylelint": {
     "extends": "stylelint-config-pagarme-react"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsmelo/market.git"
+  },
+  "keywords": [
+    "pagar.me",
+    "react",
+    "redux",
+    "market"
+  ],
+  "author": "Rodrigo S de Melo.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsmelo/market/issues"
+  },
+  "homepage": "https://github.com/rsmelo/market#readme"
 }
