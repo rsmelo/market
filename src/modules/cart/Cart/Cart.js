@@ -41,7 +41,7 @@ class Cart extends PureComponent {
           </div>
           {carts.length ?
             this.renderCarts() :
-            (<p>Você não possui nenhum produto no carrinho</p>)
+            (<p className={style.message}>Você não possui nenhum produto no carrinho</p>)
           }
         </div>
       </div>

@@ -1,5 +1,18 @@
 @import "./colors.css";
 
+:root {
+  --font-family: "Roboto", sans-serif;
+  --font-size-small: 10px;
+  --font-size-default: 14px;
+  --font-size-medium: 16px;
+  --font-size-medium-large: 18px;
+  --font-size-large: 22px;
+  --font-size-header: 28px;
+  --font-size-extra-large: 32px;
+  --content-width: 1170px;
+  --radius-default: 3px;
+}
+
 *,
 *:before,
 *:after {
@@ -9,11 +22,11 @@
 }
 
 body {
-  font-size: 14px;
+  font-size: var(--font-size-default);
   margin: 0 auto;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-family);
   padding: 0;
-  color: #333333;
+  color: var(--color-dark-grey);
 }
 
 h1, h2, h3, h4 {

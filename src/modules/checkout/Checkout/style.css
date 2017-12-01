@@ -19,13 +19,13 @@
 .form {
   background-color: var(--color-10-grey);
   padding: 1em 1em 2em;
-  border-radius: 2px;
+  border-radius: var(--radius-default);
   margin: 1em 1em 0;
   min-width: 350px;
 }
 
 .title {
-  font-size: 22px;
+  font-size: var(--font-size-large);
   font-weight: bold;
   padding: 10px 0;
   margin: 0 0 5px;
@@ -52,6 +52,6 @@
 .message {
   width: 100%;
   text-align: center;
-  font-size: 18px;
+  font-size: var(--font-size-medium-large);
   padding: 2em;
 }

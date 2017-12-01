@@ -13,7 +13,7 @@
   overflow: hidden;
   white-space: nowrap;
   display: block;
-  font-size: 18px;
+  font-size: var(--font-size-medium-large);
   font-weight: bold;
   line-height: 1.2;
   color: var(--color-dark-grey);
@@ -21,7 +21,7 @@
 }
 
 .price {
-  font-size: 16px;
+  font-size: var(--font-size-medium);
   color: var(--color-light-green);
   font-weight: bold;
 }
@@ -31,5 +31,5 @@
   display: block;
   width: 276px;
   height: 294px;
-  border-radius: 3px;
+  border-radius: var(--radius-default);
 }

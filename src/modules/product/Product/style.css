@@ -9,19 +9,19 @@
 .image {
   max-width: 360px;
   max-height: 450px;
-  border-radius: 3px;
+  border-radius: var(--radius-default);
 }
 
 .info {
   width: 550px;
   padding: 0 2em;
   margin-left: 2em;
-  border-radius: 3px;
+  border-radius: var(--radius-default);
   background-color: var(--color-white);
 }
 
 .name {
-  font-size: 22px;
+  font-size: var(--font-size-large);
   font-weight: bold;
   line-height: 1.4em;
   color: var(--color-dark-grey);
@@ -40,7 +40,7 @@
 }
 
 .price {
-  font-size: 32px;
+  font-size: var(--font-size-extra-large);
 }
 
 .priceContainer {
@@ -74,5 +74,5 @@
 .productContainer {
   display: flex;
   justify-content: space-between;
-  flex-basis: 1170px;
+  flex-basis: var(--content-width);
 }

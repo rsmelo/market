@@ -17,13 +17,13 @@
   border-radius: 50%;
   width: 2.5em;
   height: 2.5em;
-  animation: load7 1.8s infinite ease-in-out;
+  animation: load 1.8s infinite ease-in-out;
   animation-fill-mode: both;
 }
 
 .loader {
   color: var(--color-dark-green);
-  font-size: 10px;
+  font-size: var(--font-size-small);
   margin: 80px auto;
   position: relative;
   text-indent: -9999em;
@@ -47,7 +47,7 @@
   left: 3.5em;
 }
 
-@keyframes load7 {
+@keyframes load {
 
   0%,
   80%,
