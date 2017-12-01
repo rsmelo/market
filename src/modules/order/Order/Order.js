@@ -29,7 +29,7 @@ class Order extends PureComponent {
         <div>
           <h4 className={style.payablesTitle}>Recebíveis </h4>
           <div className={style.payablesContainer}>
-            {payables.map(payable => <Payable {...payable} key={payable.id} />)}
+            {payables.map(payable => <Payable {...payable} key={payable.recipientId} />)}
           </div>
         </div>
       )
