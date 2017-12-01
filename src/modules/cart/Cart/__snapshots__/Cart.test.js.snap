@@ -47,11 +47,15 @@ exports[`Cart should render correctly 1`] = `
             <td
               className=""
             >
-              <img
-                alt="Abominável"
-                className={undefined}
-                src="https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg"
-              />
+              <Link
+                to="/product/dd5ca2b6-b8ae-4627-95f3-7d49613a0df5"
+              >
+                <img
+                  alt="Abominável"
+                  className={undefined}
+                  src="https://images-na.ssl-images-amazon.com/images/I/A1eI8aYKX%2BL._SL1500_.jpg"
+                />
+              </Link>
             </td>
             <td
               className=""
