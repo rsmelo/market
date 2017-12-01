@@ -26,37 +26,39 @@ class Product extends PureComponent {
 
   renderProduct () {
     const { product } = this.props
-    return product && ([
-      <div key={0} >
-        <ButtonLink to="/" appearance="outline">
-          Ver outros produtos
-        </ButtonLink>
-      </div>,
-      <div className={style.imageContainer} key={1}>
-        <img
-          className={style.image}
-          src={product.image}
-          alt={product.name}
-        />
-      </div>,
-      <div className={style.info} key={2}>
-        <h4 className={style.name}>{product.name}</h4>
-        <span className={style.category}>{product.category}</span>
-        <p className={style.description}>{product.description}</p>
-        <div className={style.priceContainer}>
-          <span className={style.price}>R$ {product.price}</span>
-          <div className={style.buttonContainer}>
-            {this.renderButtons()}
-            <ButtonLink to="/cart" appearance="outline">
-              ir para o carrinho
-            </ButtonLink>
+    return product && (
+      <div className={style.productContainer}>
+        <div>
+          <ButtonLink to="/" appearance="outline">
+            Ver outros produtos
+          </ButtonLink>
+        </div>
+        <div className={style.imageContainer}>
+          <img
+            className={style.image}
+            src={product.image}
+            alt={product.name}
+          />
+        </div>
+        <div className={style.info}>
+          <h4 className={style.name}>{product.name}</h4>
+          <span className={style.category}>{product.category}</span>
+          <p className={style.description}>{product.description}</p>
+          <div className={style.priceContainer}>
+            <span className={style.price}>R$ {product.price}</span>
+            <div className={style.buttonContainer}>
+              {this.renderButtons()}
+              <ButtonLink to="/cart" appearance="outline">
+                ir para o carrinho
+              </ButtonLink>
+            </div>
+          </div>
+          <div className={style.sellerContainer} key={3}>
+            vendido por <span className={style.seller}>{product.seller.name}</span>
           </div>
         </div>
-        <div className={style.sellerContainer} key={3}>
-          vendido por <span className={style.seller}>{product.seller.name}</span>
-        </div>
-      </div>,
-    ])
+      </div>
+    )
   }
 
   renderButtons () {

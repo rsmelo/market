@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  padding: 1em 2em;
+  padding: 2em;
 }
 
 .image {
@@ -36,6 +36,7 @@
   color: var(--color-ligth-grey);
   text-align: justify;
   margin: 1em 0;
+  line-height: 1.5;
 }
 
 .price {
@@ -68,4 +69,10 @@
 
 .seller {
   font-weight: bold;
+}
+
+.productContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 1170px;
 }
