@@ -10,13 +10,27 @@ exports[`Root should render correctly 1`] = `
     <div
       className={undefined}
     >
-      <a
-        className=""
-        href="/cart"
-        onClick={[Function]}
+      <div
+        className={undefined}
       >
-        Carrinho
-      </a>
+        <h1>
+          <a
+            className={undefined}
+            href="/"
+            onClick={[Function]}
+          >
+            Market
+          </a>
+        </h1>
+        <a
+          href="/cart"
+          onClick={[Function]}
+        >
+          <div
+            className={undefined}
+          />
+        </a>
+      </div>
     </div>
     router
   </div>
