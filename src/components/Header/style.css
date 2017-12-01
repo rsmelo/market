@@ -13,10 +13,13 @@
   justify-content: space-between;
 }
 
-.title {
-  color: var(--color-white);
+.titleLink:hover,
+.titleLink:visited,
+.titleLink:active {
   font-size: 28px;
   font-weight: lighter;
+  text-decoration: none;
+  color: var(--color-white);
 }
 
 .cartIcon {

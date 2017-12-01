@@ -8,6 +8,7 @@ import PaymentForm from './PaymentForm'
 import validate from './validate'
 import Button from '../../../components/Button'
 import FormNotification from '../../../components/FormNotification'
+import Loader from '../../../components/Loader'
 import style from './style.css'
 
 const Checkout = ({
@@ -46,6 +47,7 @@ const Checkout = ({
           </FormNotification>
         }
       </div>
+      {submitting && <Loader />}
     </form>
   </div>
 )

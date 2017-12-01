@@ -6,7 +6,11 @@ import style from './style.css'
 const Header = () => (
   <div className={style.header}>
     <div className={style.content}>
-      <h1 className={style.title}>Market</h1>
+      <h1>
+        <Link to="/" className={style.titleLink}>
+          Market
+        </Link>
+      </h1>
       <Link to="/cart">
         <div className={style.cartIcon} />
       </Link>
