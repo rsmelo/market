@@ -6,10 +6,7 @@ import configureStore from './store'
 import rootSaga from './sagas'
 
 import './styles/main.css'
-// import registerServiceWorker from './registerServiceWorker'
 
 const store = configureStore()
-
 store.runSaga(rootSaga)
 render(<Root store={store} />, document.getElementById('root'))
-// registerServiceWorker()
