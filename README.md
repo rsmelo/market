@@ -5,7 +5,7 @@ this application is a simple e-commerce that demonstrates the visualization and 
 the client will be able to visualize items, add, remove and buy them, using pagar.me API to process the payment
 
 # Considerations
-This project uses mocked data to products and recipient, so you will need to use my api key to do an transaction using pagar.me API
+This project uses mocked data to products and recipients, so you will need to use my api key to do an transaction using pagar.me API
 
 # Technologies and Tools
 * NodeJS
@@ -35,7 +35,7 @@ npm start
 ```
 
 * Open the project in a browswer of your choice
-the default([http://localhost:3000/cart](http://localhost:3000/cart))
+the default([http://localhost:3000/cart](http://localhost:3000))
 
 ## Running the tests
 * Run the following npm command
