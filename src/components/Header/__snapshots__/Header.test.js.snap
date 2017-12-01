@@ -4,11 +4,24 @@ exports[`Header should render correctly 1`] = `
 <div
   className={undefined}
 >
-  <Link
-    className=""
-    to="/cart"
+  <div
+    className={undefined}
   >
-    Carrinho
-  </Link>
+    <h1>
+      <Link
+        className={undefined}
+        to="/"
+      >
+        Market
+      </Link>
+    </h1>
+    <Link
+      to="/cart"
+    >
+      <div
+        className={undefined}
+      />
+    </Link>
+  </div>
 </div>
 `;
