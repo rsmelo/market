@@ -404,6 +404,7 @@ exports[`Checkout renders correctly 1`] = `
         >
           <button
             className=""
+            disabled={true}
             onClick={null}
             type="submit"
           >

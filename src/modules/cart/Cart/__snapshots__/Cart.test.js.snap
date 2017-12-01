@@ -73,6 +73,7 @@ exports[`Cart should render correctly 1`] = `
             >
               <button
                 className=""
+                disabled={false}
                 onClick={[Function]}
                 type="button"
               >
