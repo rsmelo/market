@@ -1,4 +1,6 @@
+import sagaHelper from 'redux-saga-testing'
 import { put, call, takeLatest } from 'redux-saga/effects'
+import { startSubmit, stopSubmit } from 'redux-form'
 
 import checkoutSagas, { doPayment } from './sagas'
 import actions from './actions'
@@ -24,31 +26,71 @@ describe('Checkout sagas', () => {
       data,
       push,
     }
-    const generator = doPayment({ payload })
-    const transaction = { id: 1, amount: 100, status: 'paid' }
-    let output
+    const transactionReturn = { id: 1, amount: 100, status: 'paid' }
+    const transaction = { id: 1, amount: 1, status: 'paid' }
+    const payblesReturn = [
+      {
+        amount: 100,
+        fee: 10,
+        recipient_id: 'id',
+        payment_date: 'date',
+        date_created: 'date',
+        status: 'paid',
+      },
+    ]
+    const payables = [
+      {
+        amount: 1,
+        fee: 0.1,
+        recipientId: 'id',
+        paymentDate: 'date',
+        dateCreated: 'date',
+        status: 'paid',
+      },
+    ]
+    describe('Scenario 1: When runs ok', () => {
+      const it = sagaHelper(doPayment({ payload }))
 
-    it('should call createPayment', () => {
-      output = generator.next().value
-      expect(output).toEqual(call(createPayment, { data, cart }))
+      it('should put startSubmit', (result) => {
+        expect(result).toEqual(put(startSubmit('checkout')))
+      })
+      it('should call createPayment', (result) => {
+        expect(result).toEqual(call(createPayment, { data, cart }))
+        return transactionReturn
+      })
+      it('should call getPayables', (result) => {
+        expect(result).toEqual(call(getPayables, transaction.id))
+        return payblesReturn
+      })
+      it('should put addOrder', (result) => {
+        expect(result).toEqual(put(orderActions.addOrder({ ...transaction, payables })))
+      })
+      it('should call push', (result) => {
+        expect(result).toEqual(call(push, `/order/${transaction.id}`))
+      })
+      it('should put removeCart', (result) => {
+        expect(result).toEqual(put(removeCart(cart.seller.id)))
+      })
+      it('and then nothing', (result) => {
+        expect(result).toBeUndefined()
+      })
     })
-    it('should call getPayables', () => {
-      output = generator.next(transaction).value
-      expect(output).toEqual(call(getPayables, transaction.id))
-    })
-    it('should put addOrder', () => {
-      const payables = []
-      output = generator.next(payables).value
-      const parsedTransaction = { id: 1, amount: 1, status: 'paid' }
-      expect(output).toEqual(put(orderActions.addOrder({ ...parsedTransaction, payables })))
-    })
-    it('should put removeCart', () => {
-      output = generator.next().value
-      expect(output).toEqual(put(removeCart(cart.seller.id)))
-    })
-    it('should call push', () => {
-      output = generator.next(transaction).value
-      expect(output).toEqual(call(push, `/order/${transaction.id}`))
+    describe('Scenario 2: When throws exception', () => {
+      const it = sagaHelper(doPayment({ payload }))
+
+      it('should put startSubmit', (result) => {
+        expect(result).toEqual(put(startSubmit('checkout')))
+      })
+      it('should call createPayment', (result) => {
+        expect(result).toEqual(call(createPayment, { data, cart }))
+        return new Error('Something went wrong')
+      })
+      it('should put stopSubmit', (result) => {
+        expect(result).toEqual(put(stopSubmit('checkout', { _error: 'Something went wrong' })))
+      })
+      it('and then nothing', (result) => {
+        expect(result).toBeUndefined()
+      })
     })
   })
   describe('main sagas', () => {
