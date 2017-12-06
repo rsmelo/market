@@ -35,7 +35,7 @@ npm start
 ```
 
 * Open the project in a browswer of your choice
-the default([http://localhost:3000/cart](http://localhost:3000))
+the default([http://localhost:3000](http://localhost:3000))
 
 ## Running the tests
 * Run the following npm command
